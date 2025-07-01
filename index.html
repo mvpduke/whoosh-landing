@@ -56,6 +56,38 @@
     }
     footer { text-align: center; padding: 50px 20px; font-size: 0.9rem; color: #555; background: #fff; }
     a { color: #3b82f6; text-decoration: none; }
+    /* Mobile responsive tweaks */
+#mc_embed_signup {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.email-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  section h2 {
+    font-size: 1.8rem;
+  }
+  .benefits {
+    padding: 0 10px;
+  }
+  #mc_embed_signup {
+    padding: 20px 10px;
+  }
+}
   </style>
 </head>
 <body>
