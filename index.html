@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whoosh — Know Who’s Emailing You Instantly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981); color: #111; }
+    header { padding: 120px 20px; text-align: center; background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981); color: #fff; }
+    header h1 { font-size: 3rem; margin-bottom: 1rem; }
+    header p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto; }
+    header .logo-placeholder { font-size: 3rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 30px; display: inline-block; background: #fff; color: #3b82f6; padding: 20px 40px; border-radius: 12px; }
+    header button.add-chrome-btn {
+      background: #ffffff;
+      color: #3b82f6;
+      border: 2px solid #3b82f6;
+      padding: 18px 36px;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin-top: 20px;
+    }
+    header button.add-chrome-btn:hover {
+      background: #3b82f6;
+      color: #fff;
+    }
+    section { padding: 80px 20px; text-align: center; background: #f9fafb; }
+    section h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+    section p { max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem; color: #333; }
+    .benefits { display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto; }
+    .benefits div { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); font-size: 1rem; }
+    .email-signup { margin-top: 50px; background: #10b981; padding: 40px 20px; border-radius: 12px; }
+    .email-signup p { color: #fff; font-size: 1.2rem; }
+    .email-signup input[type="email"] {
+      padding: 15px;
+      width: 250px;
+      max-width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 50px;
+      font-size: 1rem;
+    }
+    .email-signup button {
+      padding: 15px 30px;
+      border: none;
+      background: #3b82f6;
+      color: #fff;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-left: 10px;
+    }
+    footer { text-align: center; padding: 50px 20px; font-size: 0.9rem; color: #555; background: #fff; }
+    a { color: #3b82f6; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-placeholder">WHOOSH</div>
+    <h1>Know Who’s Emailing You — Instantly</h1>
+    <p>Whoosh is your smart inbox sidekick — see exactly who’s behind any email and get a quick summary of what they’re saying. No more tab-hopping or endless skimming.</p>
+    <button class="add-chrome-btn" onclick="window.open('https://chrome.google.com/webstore/detail/your-extension-id', '_blank')">Add to Chrome</button>
+  </header>
+
+  <section>
+    <h2>Stop Wasting Time</h2>
+    <p>Hover once, know everything. Save hours every week by staying in flow — no extra clicks or searching.</p>
+    <div class="benefits">
+      <div><strong>Instant sender bios:</strong> Clear, trustworthy info on who’s reaching out.</div>
+      <div><strong>Smart email summaries:</strong> Digest the gist without reading it all line by line.</div>
+      <div><strong>More time for what matters:</strong> Stay focused and fly through your inbox.</div>
+    </div>
+    <div class="email-signup">
+      <p>Stay in the loop — drop your email to get updates:</p>
+      <input type="email" placeholder="Your email address" />
+      <button>Subscribe</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Whoosh — All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
+  </footer>
+</body>
+</html>
