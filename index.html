@@ -12,16 +12,19 @@
       background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
       color: #111;
     }
+
     header {
       padding: 120px 20px;
       text-align: center;
       background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
       color: #fff;
     }
+
     header h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
     }
+
     header p {
       font-size: 1.3rem;
       margin-bottom: 2rem;
@@ -29,6 +32,7 @@
       margin-left: auto;
       margin-right: auto;
     }
+
     header .logo-placeholder {
       font-size: 3rem;
       font-weight: 700;
@@ -40,6 +44,7 @@
       padding: 20px 40px;
       border-radius: 12px;
     }
+
     header button.add-chrome-btn {
       background: #ffffff;
       color: #3b82f6;
@@ -53,25 +58,30 @@
       transition: background-color 0.3s ease, color 0.3s ease;
       margin-top: 20px;
     }
+
     header button.add-chrome-btn:hover {
       background: #3b82f6;
       color: #fff;
     }
+
     section {
       padding: 80px 20px;
       text-align: center;
       background: #f9fafb;
     }
+
     section h2 {
       font-size: 2.2rem;
       margin-bottom: 1rem;
     }
+
     section p {
       max-width: 700px;
       margin: 0 auto 2rem;
       font-size: 1.1rem;
       color: #333;
     }
+
     .benefits {
       display: flex;
       flex-direction: column;
@@ -79,6 +89,7 @@
       max-width: 700px;
       margin: 0 auto;
     }
+
     .benefits div {
       background: #fff;
       padding: 25px;
@@ -86,14 +97,54 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       font-size: 1rem;
     }
-    .email-signup {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      margin-top: 50px;
-      padding: 40px 20px;
+
+    /* Mailchimp form styling */
+    #mc_embed_signup {
+      background: #d1fae5; /* light green */
+      clear: left;
+      font: 14px Helvetica, Arial, sans-serif;
+      width: 100% !important;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      margin: 0 auto;
     }
+
+    #mc-embedded-subscribe {
+      cursor: pointer;
+      padding: 12px 30px;
+      border-radius: 30px;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 200px;
+      display: block;
+      margin: 20px auto 0;
+    }
+
+    #mc_embed_signup h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .badge-wrapper {
+      background: transparent; /* badge stays normal */
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .badge-wrapper img {
+      display: inline-block;
+      width: 220px;
+      height: 40px;
+    }
+
     footer {
       text-align: center;
       padding: 50px 20px;
@@ -101,58 +152,13 @@
       color: #555;
       background: #fff;
     }
+
     a {
       color: #3b82f6;
       text-decoration: none;
     }
 
-    /* Mailchimp form styling */
-#mc_embed_signup {
-  background: #d1fae5; /* light green */
-  clear: left;
-  font: 14px Helvetica, Arial, sans-serif;
-  width: 100% !important;
-  max-width: 400px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  margin: 0 auto;
-}
-
-#mc-embedded-subscribe {
-  cursor: pointer;
-  padding: 12px 30px;
-  border-radius: 30px;
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  font-weight: 600;
-  font-size: 1rem;
-  width: 100%;
-  max-width: 200px;
-  display: block;
-  margin: 20px auto 0;
-}
-
-#mc_embed_signup h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.badge-wrapper {
-  background: transparent; /* keep the badge normal */
-  padding: 12px;
-  border-radius: 8px;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.badge-wrapper img {
-  display: inline-block;
-  width: 220px;
-  height: 40px;
-}
-
+    /* Mobile tweaks */
     @media (max-width: 600px) {
       header h1 { font-size: 2rem; }
       header p { font-size: 1rem; }
@@ -162,7 +168,6 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <div class="logo-placeholder">WHOOSH</div>
@@ -180,7 +185,7 @@
       <div><strong>More time for what matters:</strong> Stay focused and fly through your inbox.</div>
     </div>
 
-    <div class="email-signup">
+    <div style="display: flex; justify-content: center; padding: 40px 20px; margin-top: 40px;">
       <div id="mc_embed_shell">
         <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
         <div id="mc_embed_signup">
@@ -197,14 +202,14 @@
                 <div class="response" id="mce-success-response" style="display:none"></div>
               </div>
               <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                <input type="text" name="b_67fec3a658bf16b755391bc24_562dce254e" tabindex="-1" value="">
+                <input type="text" name="b_67fec3a658bf16b755391bc24_562dce254e" tabindex="-1" value="" />
               </div>
               <div class="optionalParent">
-                <div class="clear foot">
+                <div class="clear foot" style="text-align: center;">
                   <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe" />
                   <div class="badge-wrapper">
                     <a href="http://eepurl.com/jijcNk" title="Mailchimp - email marketing made easy and fun">
-                      <img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp">
+                      <img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" />
                     </a>
                   </div>
                 </div>
@@ -212,21 +217,6 @@
             </div>
           </form>
         </div>
-        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-        <script>
-          (function($) {
-            window.fnames = new Array();
-            window.ftypes = new Array();
-            fnames[0]='EMAIL';ftypes[0]='email';
-            fnames[1]='FNAME';ftypes[1]='text';
-            fnames[2]='LNAME';ftypes[2]='text';
-            fnames[3]='ADDRESS';ftypes[3]='address';
-            fnames[4]='PHONE';ftypes[4]='phone';
-            fnames[5]='BIRTHDAY';ftypes[5]='birthday';
-            fnames[6]='COMPANY';ftypes[6]='text';
-          }(jQuery));
-          var $mcj = jQuery.noConflict(true);
-        </script>
       </div>
     </div>
   </section>
