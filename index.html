@@ -19,36 +19,35 @@
     }
 
     header {
-      padding: 100px 20px 80px;
+      padding: 80px 20px 60px;
       text-align: center;
       background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
       color: #fff;
     }
 
     .logo-placeholder img {
-      max-width: 400px;
+      max-width: 300px;
       width: 100%;
       height: auto;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
     header p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       max-width: 650px;
       margin: 0 auto 2rem;
-      line-height: 1.5;
     }
 
     .add-chrome-btn {
       background: #ffffff;
       color: #3b82f6;
       border: 2px solid #3b82f6;
-      padding: 18px 36px;
+      padding: 14px 28px;
       font-size: 1rem;
       border-radius: 50px;
       cursor: pointer;
@@ -63,12 +62,12 @@
 
     section {
       background: #f9fafb;
-      padding: 80px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     section h2 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
@@ -77,36 +76,34 @@
       max-width: 700px;
       margin: 0 auto 2rem;
       color: #333;
-      line-height: 1.6;
     }
 
     .benefits {
       display: grid;
       grid-template-columns: 1fr;
       gap: 20px;
-      max-width: 900px;
+      max-width: 700px;
       margin: 0 auto;
     }
 
     .benefits div {
       background: #fff;
-      padding: 25px;
+      padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       text-align: left;
-      font-size: 1rem;
     }
 
     .email-signup {
       background: #d1fae5;
-      padding: 50px 20px;
+      padding: 40px 20px;
       border-radius: 12px;
-      margin-top: 50px;
+      margin-top: 40px;
     }
 
     #mc_embed_signup {
       background: #fff;
-      padding: 30px;
+      padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       max-width: 400px;
@@ -115,7 +112,7 @@
 
     #mc_embed_signup h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     #mc-embedded-subscribe {
@@ -144,38 +141,15 @@
       text-decoration: none;
     }
 
-    input[type="email"] {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-
     @media (min-width: 768px) {
       .benefits {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (min-width: 1024px) {
       .benefits {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      .logo-placeholder img {
-        max-width: 250px;
+        grid-template-columns: 1fr 1fr 1fr;
       }
     }
   </style>
@@ -186,16 +160,16 @@
       <img src="transparent-logo-testing.png" alt="Whoosh logo" />
     </div>
     <h1>Know Who’s Emailing You — Instantly</h1>
-    <p>Whoosh is the email intelligence you didn’t know you needed. See exactly who’s behind every email to avoid tab-hopping and save hours every week.</p>
+    <p>Whoosh is the email intelligence you didn’t know you needed. See exactly who’s behind every email, avoid unnecessary tab-hopping, and save yourself hours every week.</p>
     <button class="add-chrome-btn" onclick="window.open('https://chrome.google.com/webstore/detail/your-extension-id', '_blank')">Add to Chrome</button>
   </header>
 
   <section>
     <h2>Stop Wasting Time</h2>
-    <p>Hover once, know everything. Stay focused and fly through your inbox — no extra clicks or searching.</p>
+    <p>Hover once, know everything. Save hours every week by staying in flow — no extra clicks or searching.</p>
     <div class="benefits">
       <div><strong>Instant sender bios:</strong> Clear, trustworthy info on who’s reaching out.</div>
-      <div><strong>Identify spam and scams faster:</strong> Instantly know when an email might be risky.</div>
+      <div><strong>Identify spam and scams faster:</strong> Instantly know when an email might be risky, so you can avoid wasting time or falling victim.</div>
       <div><strong>More time for what matters:</strong> Whoosh through your emails like never before.</div>
     </div>
 
@@ -204,7 +178,7 @@
         <form action="https://github.us18.list-manage.com/subscribe/post?u=67fec3a658bf16b755391bc24&amp;id=562dce254e&amp;f_id=005cb0e6f0" method="post" target="_blank" novalidate>
           <h2>Subscribe</h2>
           <label for="mce-EMAIL">Email Address <span>*</span></label>
-          <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="Enter your email">
+          <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="Enter your email" style="width:100%;padding:10px;margin-top:10px;border-radius:6px;border:1px solid #ccc;">
           <input type="submit" value="Subscribe" id="mc-embedded-subscribe">
         </form>
       </div>
