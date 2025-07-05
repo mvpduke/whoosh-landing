@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Whoosh — Know Who’s Emailing You Instantly</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
@@ -10,7 +10,15 @@
     header { padding: 120px 20px; text-align: center; background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981); color: #fff; }
     header h1 { font-size: 3rem; margin-bottom: 1rem; }
     header p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto; }
-    header .logo-placeholder { font-size: 3rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 30px; display: inline-block; background: #fff; color: #3b82f6; padding: 20px 40px; border-radius: 12px; }
+    header .logo-placeholder {
+      margin-bottom: 30px;
+      display: inline-block;
+      background: none;
+      padding: 0;
+    }
+    header .logo-placeholder img {
+      height: 80px;
+    }
     header button.add-chrome-btn {
       background: #ffffff;
       color: #3b82f6;
@@ -33,18 +41,16 @@
     section p { max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem; color: #333; }
     .benefits { display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto; }
     .benefits div { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); font-size: 1rem; }
-    
-    /* Email signup container background changed to light green */
+
     .email-signup {
       margin-top: 50px;
-      background: #d1fae5; /* soft light green */
+      background: #d1fae5;
       padding: 40px 20px;
       border-radius: 12px;
       display: flex;
       justify-content: center;
     }
 
-    /* Mailchimp embed form container */
     #mc_embed_signup {
       background: #fff;
       clear: left;
@@ -58,7 +64,6 @@
       box-sizing: border-box;
     }
 
-    /* Subscribe button */
     #mc-embedded-subscribe {
       cursor: pointer;
       padding: 12px 30px;
@@ -74,13 +79,11 @@
       margin: 20px auto 0;
     }
 
-    /* Center the form heading */
     #mc_embed_signup h2 {
       text-align: center;
       margin-bottom: 20px;
     }
 
-    /* Footer styles */
     footer {
       text-align: center;
       padding: 50px 20px;
@@ -91,7 +94,6 @@
 
     a { color: #3b82f6; text-decoration: none; }
 
-    /* Mobile responsive tweaks */
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
@@ -127,7 +129,9 @@
 </head>
 <body>
   <header>
-    <div class="logo-placeholder">WHOOSH</div>
+    <div class="logo-placeholder">
+      <img src="updated-whoosh.logo.png" alt="Whoosh logo" />
+    </div>
     <h1>Know Who’s Emailing You — Instantly</h1>
     <p>Whoosh is the email intelligence you didn’t know you needed. See exactly who’s behind every email, avoid unnecessary tab-hopping, and save yourself hours every week.</p>
     <button class="add-chrome-btn" onclick="window.open('https://chrome.google.com/webstore/detail/your-extension-id', '_blank')">Add to Chrome</button>
