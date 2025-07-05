@@ -6,19 +6,46 @@
   <title>Whoosh — Know Who’s Emailing You Instantly</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981); color: #111; }
-    header { padding: 120px 20px; text-align: center; background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981); color: #fff; }
-    header h1 { font-size: 3rem; margin-bottom: 1rem; }
-    header p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
+      color: #111;
+    }
+
+    header {
+      padding: 120px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     header .logo-placeholder {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       display: inline-block;
       background: none;
       padding: 0;
     }
+
     header .logo-placeholder img {
-      height: 80px;
+      max-width: 240px;
+      width: 100%;
+      height: auto;
     }
+
     header button.add-chrome-btn {
       background: #ffffff;
       color: #3b82f6;
@@ -32,15 +59,45 @@
       transition: background-color 0.3s ease, color 0.3s ease;
       margin-top: 20px;
     }
+
     header button.add-chrome-btn:hover {
       background: #3b82f6;
       color: #fff;
     }
-    section { padding: 80px 20px; text-align: center; background: #f9fafb; }
-    section h2 { font-size: 2.2rem; margin-bottom: 1rem; }
-    section p { max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem; color: #333; }
-    .benefits { display: flex; flex-direction: column; gap: 20px; max-width: 700px; margin: 0 auto; }
-    .benefits div { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); font-size: 1rem; }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      background: #f9fafb;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .benefits div {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      font-size: 1rem;
+    }
 
     .email-signup {
       margin-top: 50px;
@@ -92,27 +149,35 @@
       background: #fff;
     }
 
-    a { color: #3b82f6; text-decoration: none; }
+    a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
 
     @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
       }
+
       header p {
         font-size: 1rem;
       }
+
       section h2 {
         font-size: 1.8rem;
       }
+
       .benefits {
         padding: 0 10px;
       }
+
       .email-signup {
         padding: 20px 10px !important;
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
       }
+
       #mc_embed_signup {
         width: 100% !important;
         max-width: 100% !important;
@@ -120,6 +185,7 @@
         padding: 20px 10px !important;
         box-sizing: border-box;
       }
+
       #mc-embedded-subscribe {
         max-width: 100% !important;
         width: 100% !important;
