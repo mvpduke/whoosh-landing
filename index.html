@@ -26,21 +26,24 @@
 
     header {
       min-height: 100vh;
-      padding: 0 20px 40px;
+      padding: 40px 20px 60px; /* Added more top padding to push logo down */
       text-align: center;
       background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
       color: #fff;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 16px;
+      justify-content: flex-start; /* Align content to top but padded down */
+      gap: 20px;
+    }
+
+    .logo-placeholder {
+      margin-top: 40px; /* Moves logo down more */
     }
 
     .logo-placeholder img {
       max-width: 450px;
       width: 100%;
       height: auto;
-      margin: 0 auto;
     }
 
     header h1 {
