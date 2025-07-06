@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Whoosh — Know Who’s Emailing You Instantly</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -22,46 +21,59 @@
     }
 
     header {
-      padding: 40px 20px 70px; /* even smaller top padding */
+      padding: 0 20px 40px;
       text-align: center;
       background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
       color: #fff;
+      margin-top: 0;
+    }
+
+    .logo-placeholder {
+      margin-bottom: 0;
+      padding: 0;
     }
 
     .logo-placeholder img {
       max-width: 480px;
       width: 100%;
       height: auto;
-      margin-bottom: 0px; /* remove margin below logo */
-      margin-left: auto;
-      margin-right: auto;
       display: block;
+      margin: 0 auto 0;
+    }
+
+    header h1,
+    header p,
+    .add-chrome-btn {
+      margin: 0;
+      padding: 0;
     }
 
     header h1 {
       font-size: 3rem;
-      margin-top: 5px;    /* very small gap above headline */
-      margin-bottom: 0.1rem; /* almost no gap below headline */
+      line-height: 1.1;
+      margin-top: -8px;
+      margin-bottom: 2px;
     }
 
     header p {
       font-size: 1.3rem;
       max-width: 650px;
-      margin: 0 auto 0.5rem; /* tighter below paragraph */
-      line-height: 1.5;
+      line-height: 1.4;
+      margin: 0 auto 6px;
+      margin-top: 0;
     }
 
     .add-chrome-btn {
       background: #ffffff;
       color: #3b82f6;
       border: 2px solid #3b82f6;
-      padding: 15px 34px; /* slightly smaller padding */
+      padding: 14px 32px;
       font-size: 1rem;
       border-radius: 50px;
       cursor: pointer;
       font-weight: 600;
       transition: 0.3s;
-      margin-top: 5px; /* very small space above button */
+      margin-top: 0;
     }
 
     .add-chrome-btn:hover {
