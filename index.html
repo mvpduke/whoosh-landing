@@ -29,7 +29,7 @@
     }
 
     .logo-placeholder {
-      margin-bottom: 0;
+      margin-bottom: 12px;
       padding: 0;
     }
 
@@ -38,29 +38,25 @@
       width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto 0;
+      margin: 0 auto;
     }
 
-    header h1,
-    header p,
-    .add-chrome-btn {
-      margin: 0;
-      padding: 0;
+    .header-text-group {
+      margin-top: -6px;
     }
 
-    header h1 {
+    .header-text-group h1 {
       font-size: 3rem;
       line-height: 1.1;
-      margin-top: -8px;
-      margin-bottom: 2px;
+      margin-bottom: 16px;
+      margin-top: 0;
     }
 
-    header p {
+    .header-text-group p {
       font-size: 1.3rem;
       max-width: 650px;
       line-height: 1.4;
-      margin: 0 auto 6px;
-      margin-top: 0;
+      margin: 0 auto 24px;
     }
 
     .add-chrome-btn {
@@ -73,7 +69,8 @@
       cursor: pointer;
       font-weight: 600;
       transition: 0.3s;
-      margin-top: 0;
+      margin: 0 auto;
+      display: inline-block;
     }
 
     .add-chrome-btn:hover {
@@ -222,9 +219,11 @@
     <div class="logo-placeholder">
       <img src="updated-whoosh.logo.png" alt="Whoosh logo" />
     </div>
-    <h1>Know Who’s Emailing You — Instantly</h1>
-    <p>Whoosh is the email intelligence you didn’t know you needed. See exactly who’s behind every email to avoid tab-hopping and save hours every week.</p>
-    <button class="add-chrome-btn" onclick="window.open('https://chrome.google.com/webstore/detail/your-extension-id', '_blank')">Add to Chrome</button>
+    <div class="header-text-group">
+      <h1>Know Who’s Emailing You — Instantly</h1>
+      <p>Whoosh is the email intelligence you didn’t know you needed. See exactly who’s behind every email to avoid tab-hopping and save hours every week.</p>
+      <button class="add-chrome-btn" onclick="window.open('https://chrome.google.com/webstore/detail/your-extension-id', '_blank')">Add to Chrome</button>
+    </div>
   </header>
 
   <section>
@@ -241,8 +240,8 @@
         <form action="https://github.us18.list-manage.com/subscribe/post?u=67fec3a658bf16b755391bc24&amp;id=562dce254e&amp;f_id=005cb0e6f0" method="post" target="_blank" novalidate>
           <h2>Subscribe</h2>
           <label for="mce-EMAIL">Email Address <span>*</span></label>
-          <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="Enter your email">
-          <input type="submit" value="Subscribe" id="mc-embedded-subscribe">
+          <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="Enter your email" />
+          <input type="submit" value="Subscribe" id="mc-embedded-subscribe" />
         </form>
       </div>
     </div>
