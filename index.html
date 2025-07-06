@@ -22,7 +22,7 @@
     }
 
     header {
-      padding: 50px 20px 70px; /* smaller top and bottom padding */
+      padding: 40px 20px 70px; /* even smaller top padding */
       text-align: center;
       background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
       color: #fff;
@@ -32,7 +32,7 @@
       max-width: 480px;
       width: 100%;
       height: auto;
-      margin-bottom: 5px; /* tighter below logo */
+      margin-bottom: 0px; /* remove margin below logo */
       margin-left: auto;
       margin-right: auto;
       display: block;
@@ -40,13 +40,14 @@
 
     header h1 {
       font-size: 3rem;
-      margin-bottom: 0.2rem; /* tighter below headline */
+      margin-top: 5px;    /* very small gap above headline */
+      margin-bottom: 0.1rem; /* almost no gap below headline */
     }
 
     header p {
       font-size: 1.3rem;
       max-width: 650px;
-      margin: 0 auto 1rem; /* tighter below paragraph */
+      margin: 0 auto 0.5rem; /* tighter below paragraph */
       line-height: 1.5;
     }
 
@@ -54,13 +55,13 @@
       background: #ffffff;
       color: #3b82f6;
       border: 2px solid #3b82f6;
-      padding: 16px 34px; /* slightly more compact */
+      padding: 15px 34px; /* slightly smaller padding */
       font-size: 1rem;
       border-radius: 50px;
       cursor: pointer;
       font-weight: 600;
       transition: 0.3s;
-      margin-top: 10px; /* space above button */
+      margin-top: 5px; /* very small space above button */
     }
 
     .add-chrome-btn:hover {
@@ -200,7 +201,6 @@
 
       .logo-placeholder img {
         max-width: 320px;
-        margin-bottom: 10px;
       }
     }
   </style>
