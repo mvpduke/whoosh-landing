@@ -30,15 +30,10 @@
       text-align: center;
       background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
       color: #fff;
-      margin-top: 0;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 16px;
-
-      position: static;
-      overflow: visible;
     }
 
     .logo-placeholder img {
@@ -59,7 +54,7 @@
       max-width: 650px;
       margin: 0 auto;
       line-height: 1.6;
-      color: #e0e7ff;
+      color: #ffffff; /* Fully white text for bio */
     }
 
     .add-chrome-btn {
@@ -111,11 +106,18 @@
 
     .benefits div {
       background: #fff;
-      padding: 25px;
+      padding: 30px 20px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      text-align: left;
+      text-align: center;
       font-size: 1rem;
+    }
+
+    .benefits h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #111;
     }
 
     .email-signup {
@@ -232,23 +234,32 @@
       <img src="updated-whoosh.logo.png" alt="Whoosh logo" />
     </div>
     <h1>Know Who’s Emailing You — Instantly</h1>
-    <p>Whoosh is the email intelligence you didn’t know you needed. See exactly who’s behind every email to avoid tab-hopping and save hours every week.</p>
+    <p>Whoosh is email intelligence made with the goal to save you time and energy—for free. See exactly who’s behind every email to avoid tab-hopping and save hours every week.</p>
     <button class="add-chrome-btn" onclick="window.open('https://chrome.google.com/webstore/detail/your-extension-id', '_blank')">Add to Chrome</button>
   </header>
 
   <section>
     <h2>Stop Wasting Time</h2>
-    <p>Hover once, know everything. Stay focused and fly through your inbox — no extra clicks or searching.</p>
+    <p>Hover once, know everything. Stay focused and Whoosh through your inbox — no extra clicks or searching.</p>
     <div class="benefits">
-      <div><strong>Instant sender bios:</strong> Clear, trustworthy info on who’s reaching out.</div>
-      <div><strong>Identify spam and scams faster:</strong> Instantly know when an email might be risky.</div>
-      <div><strong>More time for what matters:</strong> Whoosh through your emails like never before.</div>
+      <div>
+        <h3>Instant sender bios</h3>
+        <p>Clear, trustworthy info on who’s reaching out.</p>
+      </div>
+      <div>
+        <h3>Identify spam and scams faster</h3>
+        <p>Instantly know when an email might be risky.</p>
+      </div>
+      <div>
+        <h3>More time for what matters</h3>
+        <p>Whoosh through your emails like never before.</p>
+      </div>
     </div>
 
     <div class="email-signup">
       <div id="mc_embed_signup">
         <form action="https://github.us18.list-manage.com/subscribe/post?u=67fec3a658bf16b755391bc24&amp;id=562dce254e&amp;f_id=005cb0e6f0" method="post" target="_blank" novalidate>
-          <h2>Subscribe</h2>
+          <h2>Join Whoosh Nation</h2>
           <label for="mce-EMAIL">Email Address <span>*</span></label>
           <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="Enter your email" />
           <input type="submit" value="Subscribe" id="mc-embedded-subscribe" />
