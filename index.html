@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* Ensure full height for background */
     html, body {
       height: 100%;
       margin: 0;
@@ -60,7 +59,7 @@
       max-width: 650px;
       margin: 0 auto;
       line-height: 1.6;
-      color: #e0e7ff; /* lighter text for contrast */
+      color: #e0e7ff;
     }
 
     .add-chrome-btn {
@@ -119,7 +118,6 @@
       font-size: 1rem;
     }
 
-    /* UPDATED .email-signup to match top gradient */
     .email-signup {
       background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
       padding: 50px 20px;
@@ -137,14 +135,9 @@
       box-shadow: none;
     }
 
-    #mc_embed_signup h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #e0e7ff;
-    }
-
+    #mc_embed_signup h2,
     #mc_embed_signup label {
-      color: #e0e7ff;
+      color: #ffffff; /* white text */
       font-weight: 600;
     }
 
@@ -160,8 +153,8 @@
     }
 
     #mc-embedded-subscribe {
-      background-color: #3b82f6;
-      color: white;
+      background-color: #ffffff; /* white oval */
+      color: #3b82f6; /* blue text */
       border: none;
       padding: 12px;
       border-radius: 30px;
@@ -170,6 +163,12 @@
       width: 100%;
       margin-top: 20px;
       cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #mc-embedded-subscribe:hover {
+      background-color: #3b82f6;
+      color: #fff;
     }
 
     footer {
