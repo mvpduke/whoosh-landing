@@ -64,68 +64,77 @@
     .cloud {
       position: absolute;
       background: 
-        radial-gradient(ellipse 100% 60% at 35% 40%, 
-          rgba(255, 255, 255, 0.98) 0%, 
-          rgba(255, 255, 255, 0.95) 15%, 
-          rgba(248, 250, 252, 0.88) 30%, 
-          rgba(241, 245, 249, 0.75) 50%, 
-          rgba(226, 232, 240, 0.4) 70%, 
-          rgba(203, 213, 225, 0.15) 85%, 
+        radial-gradient(ellipse 140% 80% at 30% 35%, 
+          rgba(255, 255, 255, 0.95) 0%, 
+          rgba(255, 255, 255, 0.92) 8%, 
+          rgba(248, 250, 252, 0.85) 18%, 
+          rgba(241, 245, 249, 0.72) 32%, 
+          rgba(226, 232, 240, 0.55) 48%, 
+          rgba(203, 213, 225, 0.35) 65%, 
+          rgba(148, 163, 184, 0.18) 80%, 
+          rgba(100, 116, 139, 0.08) 92%, 
           transparent 100%);
-      border-radius: 40% 60% 55% 80% / 30% 80% 70% 40%;
+      border-radius: 45% 65% 50% 75% / 35% 70% 65% 40%;
       box-shadow: 
-        inset -8px -12px 25px rgba(0, 0, 0, 0.08),
-        inset 5px 8px 20px rgba(255, 255, 255, 0.7),
-        0 15px 35px rgba(0, 0, 0, 0.12),
-        0 5px 15px rgba(0, 0, 0, 0.08);
-      filter: blur(0.2px) contrast(1.1) brightness(1.05);
-      animation: cloud-drift 35s linear infinite;
-      transition: all 0.3s ease;
+        inset -15px -20px 40px rgba(71, 85, 105, 0.12),
+        inset 8px 12px 30px rgba(255, 255, 255, 0.8),
+        inset -5px -8px 20px rgba(100, 116, 139, 0.15),
+        0 25px 60px rgba(71, 85, 105, 0.15),
+        0 8px 25px rgba(100, 116, 139, 0.12),
+        0 3px 10px rgba(148, 163, 184, 0.1);
+      filter: blur(0.1px) contrast(1.15) brightness(1.08) saturate(0.95);
+      animation: cloud-drift 45s linear infinite;
+      transition: none;
       transform-style: preserve-3d;
+      opacity: 0.92;
     }
 
     .cloud::before {
       content: '';
       position: absolute;
-      top: -35%;
-      left: 20%;
-      width: 85%;
-      height: 100%;
+      top: -45%;
+      left: 15%;
+      width: 95%;
+      height: 120%;
       background: 
-        radial-gradient(ellipse 80% 70% at 45% 55%, 
-          rgba(255, 255, 255, 0.92) 0%, 
-          rgba(255, 255, 255, 0.85) 20%, 
-          rgba(248, 250, 252, 0.65) 40%, 
-          rgba(241, 245, 249, 0.4) 60%, 
-          rgba(226, 232, 240, 0.2) 80%, 
+        radial-gradient(ellipse 110% 90% at 40% 60%, 
+          rgba(255, 255, 255, 0.88) 0%, 
+          rgba(255, 255, 255, 0.82) 12%, 
+          rgba(248, 250, 252, 0.68) 28%, 
+          rgba(241, 245, 249, 0.48) 45%, 
+          rgba(226, 232, 240, 0.28) 65%, 
+          rgba(203, 213, 225, 0.12) 80%, 
           transparent 100%);
-      border-radius: 60% 80% 70% 50% / 40% 60% 80% 30%;
+      border-radius: 55% 75% 65% 45% / 40% 80% 70% 35%;
       box-shadow: 
-        inset -6px -8px 15px rgba(0, 0, 0, 0.05),
-        inset 3px 5px 12px rgba(255, 255, 255, 0.6);
-      filter: blur(0.1px);
+        inset -10px -15px 25px rgba(71, 85, 105, 0.08),
+        inset 5px 8px 20px rgba(255, 255, 255, 0.7),
+        inset -3px -5px 12px rgba(100, 116, 139, 0.1);
+      filter: blur(0.05px) brightness(1.05);
     }
 
     .cloud::after {
       content: '';
       position: absolute;
-      top: -20%;
-      right: 15%;
-      width: 70%;
-      height: 90%;
+      top: -25%;
+      right: 10%;
+      width: 85%;
+      height: 110%;
       background: 
-        radial-gradient(ellipse 60% 80% at 55% 45%, 
-          rgba(255, 255, 255, 0.88) 0%, 
-          rgba(255, 255, 255, 0.75) 25%, 
-          rgba(248, 250, 252, 0.5) 45%, 
-          rgba(241, 245, 249, 0.3) 65%, 
-          rgba(226, 232, 240, 0.15) 80%, 
+        radial-gradient(ellipse 80% 100% at 55% 45%, 
+          rgba(255, 255, 255, 0.82) 0%, 
+          rgba(255, 255, 255, 0.75) 15%, 
+          rgba(248, 250, 252, 0.58) 35%, 
+          rgba(241, 245, 249, 0.38) 55%, 
+          rgba(226, 232, 240, 0.20) 75%, 
+          rgba(203, 213, 225, 0.08) 90%, 
           transparent 100%);
-      border-radius: 45% 70% 80% 65% / 60% 40% 70% 50%;
+      border-radius: 40% 80% 75% 60% / 65% 45% 80% 55%;
       box-shadow: 
-        inset -4px -6px 12px rgba(0, 0, 0, 0.04),
-        inset 2px 4px 10px rgba(255, 255, 255, 0.5);
-      filter: blur(0.05px);
+        inset -8px -12px 20px rgba(71, 85, 105, 0.06),
+        inset 3px 6px 15px rgba(255, 255, 255, 0.6),
+        inset -2px -4px 8px rgba(100, 116, 139, 0.08);
+      filter: blur(0.02px) brightness(1.03);
     }
 
     /* More varied and realistic cloud sizes */
@@ -281,10 +290,11 @@
 
     @keyframes cloud-drift {
       0% { transform: translateX(0) translateY(0px) rotate(0deg); }
-      25% { transform: translateX(25vw) translateY(-3px) rotate(0.5deg); }
-      50% { transform: translateX(50vw) translateY(0px) rotate(0deg); }
-      75% { transform: translateX(75vw) translateY(-2px) rotate(-0.3deg); }
-      100% { transform: translateX(calc(100vw + 400px)) translateY(0px) rotate(0deg); }
+      20% { transform: translateX(20vw) translateY(-1px) rotate(0.2deg); }
+      40% { transform: translateX(40vw) translateY(1px) rotate(-0.1deg); }
+      60% { transform: translateX(60vw) translateY(-0.5px) rotate(0.15deg); }
+      80% { transform: translateX(80vw) translateY(0.5px) rotate(-0.05deg); }
+      100% { transform: translateX(calc(100vw + 450px)) translateY(0px) rotate(0deg); }
     }
 
     @keyframes wind-sweep {
@@ -345,17 +355,17 @@
       margin: 0;
       line-height: 1.2;
       animation: fadeInUp 1s ease-out 0.2s both;
-      background: linear-gradient(45deg, #ffffff, #f0f9ff, #ffffff, #fbbf24);
+      background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa, #3b82f6);
       background-size: 300% 300%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       animation: fadeInUp 1s ease-out 0.2s both, shimmer 4s ease-in-out infinite;
       text-shadow: 
-        0 0 40px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(59, 130, 246, 0.8),
         0 2px 8px rgba(0, 0, 0, 0.3),
-        0 4px 16px rgba(255, 255, 255, 0.4);
-      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+        0 4px 16px rgba(59, 130, 246, 0.4);
+      filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6));
       font-weight: 700;
       letter-spacing: -0.02em;
     }
@@ -371,18 +381,20 @@
       max-width: 650px;
       margin: 0 auto;
       line-height: 1.6;
-      color: #ffffff;
+      color: #1e40af;
       animation: fadeInUp 1s ease-out 0.4s both;
       text-shadow: 
-        0 0 25px rgba(255, 255, 255, 0.5),
+        0 0 25px rgba(59, 130, 246, 0.5),
         0 2px 15px rgba(0, 0, 0, 0.4),
-        0 4px 20px rgba(255, 255, 255, 0.3);
+        0 4px 20px rgba(59, 130, 246, 0.3);
       font-weight: 500;
-      background: rgba(255, 255, 255, 0.95);
+      background: linear-gradient(45deg, #1e40af, #3b82f6, #1e40af);
+      background-size: 200% 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+      filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.4));
+      animation: fadeInUp 1s ease-out 0.4s both, shimmer 3s ease-in-out infinite;
     }
 
     .add-chrome-btn {
@@ -474,12 +486,17 @@
       font-size: 1.1rem;
       max-width: 700px;
       margin: 0 auto 2rem;
-      color: #475569;
+      color: #111827;
       line-height: 1.6;
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.6s ease 0.2s;
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    .benefits p {
+      color: #111827;
+      font-weight: 700;
     }
 
     section p.animate {
@@ -629,15 +646,15 @@
     }
 
     #mc_embed_signup h2 {
-      color: #fbbf24;
+      color: #1e40af;
       font-weight: 700;
       margin-bottom: 20px;
       text-shadow: 
-        0 0 30px rgba(251, 191, 36, 0.8),
+        0 0 30px rgba(30, 64, 175, 0.8),
         0 2px 15px rgba(0, 0, 0, 0.4),
-        0 4px 25px rgba(251, 191, 36, 0.4);
+        0 4px 25px rgba(30, 64, 175, 0.4);
       font-size: 2rem;
-      background: linear-gradient(45deg, #fbbf24, #f59e0b, #fbbf24);
+      background: linear-gradient(45deg, #1e40af, #3b82f6, #1e40af);
       background-size: 200% 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -708,9 +725,10 @@
     }
 
     #mc-embedded-subscribe:hover {
-      color: #fff;
+      color: #1e40af;
       transform: translateY(-3px);
       box-shadow: 0 12px 30px rgba(30, 64, 175, 0.3);
+      background: linear-gradient(135deg, #f0f9ff, #ffffff);
     }
 
     #mc-embedded-subscribe:hover::before {
@@ -894,125 +912,27 @@
   </button>
 
   <script>
-    // Enhanced Interactive Sky System - More Powerful Mouse Effects
+    // Subtle Interactive Sky System - Minimal Mouse Effects
     let mouseX = 0, mouseY = 0;
 
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
-      
-      // More powerful cloud interaction with enhanced wind effects
-      const clouds = document.querySelectorAll('.cloud');
-      clouds.forEach((cloud, index) => {
-        const rect = cloud.getBoundingClientRect();
-        const cloudCenterX = rect.left + rect.width / 2;
-        const cloudCenterY = rect.top + rect.height / 2;
-        
-        const distanceX = e.clientX - cloudCenterX;
-        const distanceY = e.clientY - cloudCenterY;
-        const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-        
-        if (distance < 200) { // Increased interaction radius
-          // More powerful wind effect
-          const intensity = (200 - distance) / 200;
-          const windX = (distanceX / distance) * intensity * 25; // Increased power
-          const windY = (distanceY / distance) * intensity * 15; // Increased power
-          
-          // Apply stronger wind distortion to cloud
-          cloud.style.transform = `translate(${windX}px, ${windY}px) scale(${1 + intensity * 0.2}) skew(${windX * 0.8}deg, ${windY * 0.4}deg) rotate(${windX * 0.3}deg)`;
-          cloud.style.filter = `blur(${0.5 + intensity * 2.5}px) brightness(${1 + intensity * 0.2}) contrast(${1 + intensity * 0.1})`;
-          cloud.style.opacity = 0.6 + (intensity * 0.4);
-          
-          // Create more frequent and powerful wind effects
-          if (Math.random() < 0.6) { // Increased chance to 60%
-            createWindEffect(cloudCenterX, cloudCenterY, windX, windY, intensity);
-          }
-          
-          // Add turbulence effect
-          if (intensity > 0.7) {
-            createTurbulenceEffect(cloudCenterX, cloudCenterY, windX, windY);
-          }
-        } else {
-          // Smooth return to normal state
-          cloud.style.transform = 'translate(0px, 0px) scale(1) skew(0deg, 0deg) rotate(0deg)';
-          cloud.style.filter = 'blur(0.2px) contrast(1.1) brightness(1.05)';
-          cloud.style.opacity = '';
-        }
-      });
     });
 
-    // Enhanced wind effect streaks
-    function createWindEffect(x, y, windX, windY, intensity) {
-      const windStreak = document.createElement('div');
-      windStreak.className = 'wind-effect';
-      windStreak.style.left = x + 'px';
-      windStreak.style.top = y + 'px';
-      windStreak.style.transform = `rotate(${Math.atan2(windY, windX) * 180 / Math.PI}deg) scale(${0.8 + intensity * 0.6})`;
-      windStreak.style.opacity = intensity;
-      
-      document.querySelector('.sky-container').appendChild(windStreak);
-      
-      setTimeout(() => {
-        if (windStreak.parentNode) {
-          windStreak.remove();
-        }
-      }, 1200);
-    }
-
-    // New turbulence effect for stronger interactions
-    function createTurbulenceEffect(x, y, windX, windY) {
-      for (let i = 0; i < 3; i++) {
-        setTimeout(() => {
-          const turbulence = document.createElement('div');
-          turbulence.style.position = 'absolute';
-          turbulence.style.pointerEvents = 'none';
-          turbulence.style.width = '60px';
-          turbulence.style.height = '20px';
-          turbulence.style.background = 'radial-gradient(ellipse, rgba(255, 255, 255, 0.6) 0%, rgba(248, 250, 252, 0.4) 50%, transparent 100%)';
-          turbulence.style.borderRadius = '50%';
-          turbulence.style.left = (x + Math.random() * 40 - 20) + 'px';
-          turbulence.style.top = (y + Math.random() * 30 - 15) + 'px';
-          turbulence.style.opacity = '0';
-          turbulence.style.transform = `rotate(${Math.random() * 360}deg) scale(0.5)`;
-          turbulence.style.transition = 'all 0.8s ease-out';
-          turbulence.style.filter = 'blur(1px)';
-          
-          document.querySelector('.sky-container').appendChild(turbulence);
-          
-          // Animate turbulence
-          requestAnimationFrame(() => {
-            turbulence.style.opacity = '0.7';
-            turbulence.style.transform = `rotate(${Math.random() * 360}deg) scale(1.2) translate(${windX * 0.5}px, ${windY * 0.3}px)`;
-          });
-          
-          setTimeout(() => {
-            if (turbulence.parentNode) {
-              turbulence.style.opacity = '0';
-              turbulence.style.transform += ' scale(0.3)';
-              setTimeout(() => {
-                if (turbulence.parentNode) {
-                  turbulence.remove();
-                }
-              }, 800);
-            }
-          }, 600);
-        }, i * 150);
-      }
-    }
-
-    // Enhanced sky gradient shifting based on mouse position
+    // Enhanced sky gradient subtle shifting based on mouse position
     document.addEventListener('mousemove', (e) => {
       const skyGradient = document.querySelector('.sky-gradient');
       const x = e.clientX / window.innerWidth;
       const y = e.clientY / window.innerHeight;
       
-      // More dynamic sky color variations
-      const deepBlue = `hsl(220, ${70 + x * 10}%, ${45 + y * 8}%)`;
-      const skyBlue = `hsl(210, ${75 + x * 8}%, ${58 + y * 5}%)`;
-      const lightBlue = `hsl(200, ${80 + x * 10}%, ${75 + y * 8}%)`;
-      const paleBlue = `hsl(195, ${60 + x * 12}%, ${85 + y * 5}%)`;
-      const veryPale = `hsl(190, ${40 + x * 8}%, ${92 + y * 4}%)`;
-      const nearWhite = `hsl(0, 0%, ${96 + y * 3}%)`;
+      // Very subtle sky color variations like real atmosphere
+      const deepBlue = `hsl(220, ${70 + x * 3}%, ${45 + y * 2}%)`;
+      const skyBlue = `hsl(210, ${75 + x * 2}%, ${58 + y * 1}%)`;
+      const lightBlue = `hsl(200, ${80 + x * 2}%, ${75 + y * 2}%)`;
+      const paleBlue = `hsl(195, ${60 + x * 3}%, ${85 + y * 1}%)`;
+      const veryPale = `hsl(190, ${40 + x * 2}%, ${92 + y * 1}%)`;
+      const nearWhite = `hsl(0, 0%, ${96 + y * 1}%)`;
       
       skyGradient.style.background = `linear-gradient(180deg, 
         ${deepBlue} 0%, 
