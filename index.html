@@ -24,13 +24,13 @@
       overflow-x: hidden;
     }
 
-    /* Interactive Sky Background */
+    /* Interactive Sky Background - Now extends below the button */
     .sky-container {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 110vh;
+      height: 120vh;
       overflow: hidden;
       z-index: 0;
     }
@@ -40,7 +40,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 110vh;
+      height: 120vh;
       background: linear-gradient(180deg, 
         #2563eb 0%, 
         #3b82f6 12%, 
@@ -58,7 +58,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 110vh;
+      height: 120vh;
     }
 
     .cloud {
@@ -84,7 +84,7 @@
         0 3px 10px rgba(148, 163, 184, 0.1);
       filter: blur(0.1px) contrast(1.15) brightness(1.08) saturate(0.95);
       animation: cloud-drift 45s linear infinite;
-      transition: none;
+      transition: transform 0.8s ease-out;
       transform-style: preserve-3d;
       opacity: 0.92;
     }
@@ -221,7 +221,7 @@
     .cloud:nth-child(9) {
       width: 160px;
       height: 90px;
-      top: 20%;
+      top: 80%;
       left: -20%;
       animation-duration: 41s;
       animation-delay: -22s;
@@ -231,7 +231,7 @@
     .cloud:nth-child(10) {
       width: 260px;
       height: 140px;
-      top: 50%;
+      top: 88%;
       left: -32%;
       animation-duration: 37s;
       animation-delay: -5s;
@@ -268,24 +268,20 @@
       animation-delay: -30s;
     }
 
-    .wind-effect {
-      position: absolute;
-      pointer-events: none;
-      width: 120px;
-      height: 35px;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.4), 
-        rgba(248, 250, 252, 0.6), 
-        rgba(241, 245, 249, 0.5), 
-        rgba(255, 255, 255, 0.3), 
-        transparent);
-      border-radius: 40px;
-      opacity: 0;
-      transform: translateX(-60px);
-      animation: wind-sweep 1.5s ease-out;
-      filter: blur(0.8px);
-      box-shadow: 0 2px 15px rgba(255, 255, 255, 0.3);
+    .cloud.wispy:nth-child(13) {
+      width: 220px;
+      top: 85%;
+      left: -28%;
+      animation-duration: 48s;
+      animation-delay: -15s;
+    }
+
+    .cloud.wispy:nth-child(14) {
+      width: 190px;
+      top: 95%;
+      left: -25%;
+      animation-duration: 52s;
+      animation-delay: -28s;
     }
 
     @keyframes cloud-drift {
@@ -295,29 +291,6 @@
       60% { transform: translateX(60vw) translateY(-0.5px) rotate(0.15deg); }
       80% { transform: translateX(80vw) translateY(0.5px) rotate(-0.05deg); }
       100% { transform: translateX(calc(100vw + 450px)) translateY(0px) rotate(0deg); }
-    }
-
-    @keyframes wind-sweep {
-      0% { 
-        opacity: 0; 
-        transform: translateX(-60px) scale(0.4) skewX(-15deg);
-      }
-      20% { 
-        opacity: 0.8; 
-        transform: translateX(-10px) scale(0.8) skewX(-10deg);
-      }
-      40% { 
-        opacity: 1; 
-        transform: translateX(20px) scale(1) skewX(-5deg);
-      }
-      70% { 
-        opacity: 0.7; 
-        transform: translateX(60px) scale(1.2) skewX(0deg);
-      }
-      100% { 
-        opacity: 0; 
-        transform: translateX(120px) scale(0.6) skewX(5deg);
-      }
     }
 
     header {
@@ -796,8 +769,12 @@
         max-width: 250px;
       }
 
-      .aurora {
-        filter: blur(20px);
+      .sky-container {
+        height: 115vh;
+      }
+
+      .sky-gradient, .clouds {
+        height: 115vh;
       }
     }
   </style>
@@ -817,6 +794,8 @@
         <div class="cloud"></div>
         <div class="cloud"></div>
         <div class="cloud"></div>
+        <div class="cloud wispy"></div>
+        <div class="cloud wispy"></div>
         <div class="cloud wispy"></div>
         <div class="cloud wispy"></div>
       </div>
@@ -858,7 +837,7 @@
           </div>
         </form>
       </div>
-    </div>
+    </div
   </section>
 
   <footer>
