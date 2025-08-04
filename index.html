@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Whoosh — Know Who's Emailing You Instantly</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -13,6 +12,7 @@
       height: 100%;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -22,34 +22,92 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Animated background particles */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; }
+    .particle:nth-child(2) { width: 6px; height: 6px; left: 20%; animation-delay: 1s; }
+    .particle:nth-child(3) { width: 3px; height: 3px; left: 30%; animation-delay: 2s; }
+    .particle:nth-child(4) { width: 5px; height: 5px; left: 40%; animation-delay: 1.5s; }
+    .particle:nth-child(5) { width: 4px; height: 4px; left: 50%; animation-delay: 0.5s; }
+    .particle:nth-child(6) { width: 6px; height: 6px; left: 60%; animation-delay: 2.5s; }
+    .particle:nth-child(7) { width: 3px; height: 3px; left: 70%; animation-delay: 3s; }
+    .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-delay: 1.8s; }
+    .particle:nth-child(9) { width: 4px; height: 4px; left: 90%; animation-delay: 0.8s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
     }
 
     header {
       min-height: 100vh;
-      padding: 40px 20px 60px; /* Added more top padding to push logo down */
+      padding: 40px 20px 60px;
       text-align: center;
       background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
       color: #fff;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start; /* Align content to top but padded down */
+      justify-content: flex-start;
       gap: 20px;
+      position: relative;
+      z-index: 1;
     }
 
     .logo-placeholder {
-      margin-top: 40px; /* Moves logo down more */
+      margin-top: 40px;
+      animation: fadeInUp 1s ease-out;
     }
 
     .logo-placeholder img {
       max-width: 450px;
       width: 100%;
       height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-placeholder:hover img {
+      transform: scale(1.05) rotate(2deg);
     }
 
     header h1 {
       font-size: 3rem;
       margin: 0;
       line-height: 1.2;
+      animation: fadeInUp 1s ease-out 0.2s both;
+      background: linear-gradient(45deg, #ffffff, #e0e7ff, #ffffff);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 1s ease-out 0.2s both, shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     header p {
@@ -58,6 +116,7 @@
       margin: 0 auto;
       line-height: 1.6;
       color: #ffffff;
+      animation: fadeInUp 1s ease-out 0.4s both;
     }
 
     .add-chrome-btn {
@@ -69,14 +128,52 @@
       border-radius: 50px;
       cursor: pointer;
       font-weight: 600;
-      transition: 0.3s;
+      transition: all 0.3s ease;
       max-width: 220px;
       margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    .add-chrome-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+      transition: all 0.5s ease;
+      transform: translate(-50%, -50%);
+      z-index: -1;
     }
 
     .add-chrome-btn:hover {
       background: #3b82f6;
       color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+    }
+
+    .add-chrome-btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .add-chrome-btn:active {
+      transform: translateY(0px);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     section {
@@ -84,11 +181,20 @@
       padding: 80px 20px;
       text-align: center;
       flex-shrink: 0;
+      position: relative;
     }
 
     section h2 {
       font-size: 2.2rem;
       margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    section h2.animate {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     section p {
@@ -97,6 +203,14 @@
       margin: 0 auto 2rem;
       color: #333;
       line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease 0.2s;
+    }
+
+    section p.animate {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .benefits {
@@ -114,13 +228,65 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       text-align: center;
       font-size: 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
+
+    .benefits div::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .benefits div:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .benefits div:hover::before {
+      left: 100%;
+    }
+
+    .benefits div.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .benefits div:nth-child(1).animate { transition-delay: 0.1s; }
+    .benefits div:nth-child(2).animate { transition-delay: 0.2s; }
+    .benefits div:nth-child(3).animate { transition-delay: 0.3s; }
 
     .benefits h3 {
       font-size: 1.2rem;
       margin-bottom: 10px;
       font-weight: 700;
       color: #111;
+      position: relative;
+    }
+
+    .benefits h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #4f46e5, #3b82f6);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .benefits div:hover h3::after {
+      width: 50px;
     }
 
     .email-signup {
@@ -129,6 +295,33 @@
       border-radius: 12px;
       margin-top: 50px;
       color: #fff;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 0.6s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .email-signup::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: rotate 10s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .email-signup.animate {
+      opacity: 1;
+      transform: scale(1);
     }
 
     #mc_embed_signup {
@@ -138,6 +331,8 @@
       max-width: 500px;
       margin: 0 auto;
       box-shadow: none;
+      position: relative;
+      z-index: 1;
     }
 
     #mc_embed_signup h2 {
@@ -162,6 +357,14 @@
       padding: 12px;
       border-radius: 6px;
       font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    input[type="email"]:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      transform: scale(1.02);
     }
 
     #mc-embedded-subscribe {
@@ -173,12 +376,33 @@
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #mc-embedded-subscribe::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: #3b82f6;
+      transition: all 0.3s ease;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      z-index: -1;
     }
 
     #mc-embedded-subscribe:hover {
-      background-color: #3b82f6;
       color: #fff;
+      transform: translateY(-2px);
+    }
+
+    #mc-embedded-subscribe:hover::before {
+      width: 200px;
+      height: 200px;
     }
 
     footer {
@@ -187,11 +411,13 @@
       font-size: 0.9rem;
       color: #555;
       background: #fff;
+      position: relative;
     }
 
     a {
       color: #3b82f6;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     .social-icons {
@@ -202,11 +428,42 @@
       color: #3b82f6;
       margin: 0 10px;
       font-size: 1.5rem;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
+      display: inline-block;
     }
 
     .social-icons a:hover {
       color: #10b981;
+      transform: translateY(-3px) scale(1.2);
+    }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #4f46e5, #3b82f6);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
     }
 
     @media (min-width: 768px) {
@@ -237,6 +494,18 @@
   </style>
 </head>
 <body>
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
   <header>
     <div class="logo-placeholder">
       <img src="updated-whoosh.logo.png" alt="Whoosh logo" />
@@ -285,5 +554,108 @@
     </div>
     &copy; 2025 Whoosh — All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
   </footer>
+
+  <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const elementsToAnimate = document.querySelectorAll('section h2, section p, .benefits div, .email-signup');
+      elementsToAnimate.forEach(el => observer.observe(el));
+
+      // Scroll to top button visibility
+      const scrollTopBtn = document.querySelector('.scroll-top');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollTopBtn.classList.add('visible');
+        } else {
+          scrollTopBtn.classList.remove('visible');
+        }
+      });
+
+      // Add subtle cursor trail effect
+      let mouseX = 0, mouseY = 0;
+      let trailX = 0, trailY = 0;
+
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      // Parallax effect for particles
+      document.addEventListener('mousemove', (e) => {
+        const particles = document.querySelectorAll('.particle');
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+
+        particles.forEach((particle, index) => {
+          const speed = (index + 1) * 0.5;
+          const xPos = (x - 0.5) * speed;
+          const yPos = (y - 0.5) * speed;
+          particle.style.transform += ` translate(${xPos}px, ${yPos}px)`;
+        });
+      });
+
+      // Add click ripple effect to buttons
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          const ripple = document.createElement('span');
+          const rect = button.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+          
+          ripple.style.cssText = `
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            left: ${x}px;
+            top: ${y}px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+          `;
+          
+          button.style.position = 'relative';
+          button.style.overflow = 'hidden';
+          button.appendChild(ripple);
+          
+          setTimeout(() => ripple.remove(), 600);
+        });
+      });
+    });
+
+    // Add ripple keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes ripple {
+        to {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
 </body>
 </html>
