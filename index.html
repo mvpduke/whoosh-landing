@@ -1,80 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Whoosh – Know Who's Emailing You</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <h1 class="logo">Whoosh</h1>
-        <nav class="nav">
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#download">Download</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whoosh — Know Who’s Emailing You Instantly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <section class="hero">
-      <div class="container">
-        <h2>The AI-powered way to instantly know who’s emailing you</h2>
-        <p>No more tab-switching. No more guessing. Just clarity — instantly.</p>
-        <a
-          href="https://chromewebstore.google.com/detail/pdmchibbijoomhdfdmhmmeegcahfdkli?utm_source=item-share-cb"
-          class="btn btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Add to Chrome</a
-        >
-      </div>
-    </section>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-    <section id="about" class="about">
-      <div class="container">
-        <h3>Why Whoosh?</h3>
-        <p>
-          Email hasn't caught up to the speed of AI. We’re changing that — starting
-          with the most important thing: knowing who’s reaching out and why.
-        </p>
-      </div>
-    </section>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
+      color: #111;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-    <section id="features" class="features">
-      <div class="container">
-        <h3>What You’ll Get</h3>
-        <ul>
-          <li>Instant context on every email</li>
-          <li>Hover to preview sender info</li>
-          <li>Focus on what matters, skip the rest</li>
-        </ul>
-      </div>
-    </section>
+    header {
+      min-height: 100vh;
+      padding: 40px 20px 60px; /* Added more top padding to push logo down */
+      text-align: center;
+      background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Align content to top but padded down */
+      gap: 20px;
+    }
 
-    <section id="download" class="download">
-      <div class="container">
-        <h3>Ready to take control of your inbox?</h3>
-        <a
-          href="https://chromewebstore.google.com/detail/pdmchibbijoomhdfdmhmmeegcahfdkli?utm_source=item-share-cb"
-          class="btn btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Get Whoosh Free on Chrome</a
-        >
-      </div>
-    </section>
+    .logo-placeholder {
+      margin-top: 40px; /* Moves logo down more */
+    }
 
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2025 Whoosh. All rights reserved.</p>
+    .logo-placeholder img {
+      max-width: 450px;
+      width: 100%;
+      height: auto;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #ffffff;
+    }
+
+    .add-chrome-btn {
+      background: #ffffff;
+      color: #3b82f6;
+      border: 2px solid #3b82f6;
+      padding: 18px 36px;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+
+    .add-chrome-btn:hover {
+      background: #3b82f6;
+      color: #fff;
+    }
+
+    section {
+      background: #f9fafb;
+      padding: 80px 20px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .benefits div {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .benefits h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .email-signup {
+      background: linear-gradient(135deg, #4f46e5, #3b82f6, #10b981);
+      padding: 50px 20px;
+      border-radius: 12px;
+      margin-top: 50px;
+      color: #fff;
+    }
+
+    #mc_embed_signup {
+      background: transparent;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: none;
+    }
+
+    #mc_embed_signup h2 {
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    input[type="email"] {
+      background: #fff;
+      color: #111;
+      border: 1px solid #ccc;
+      width: 100%;
+      max-width: 400px;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    #mc-embedded-subscribe {
+      background-color: #ffffff;
+      color: #3b82f6;
+      border: none;
+      padding: 12px 40px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #mc-embedded-subscribe:hover {
+      background-color: #3b82f6;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #555;
+      background: #fff;
+    }
+
+    a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+
+    .social-icons {
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      color: #3b82f6;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #10b981;
+    }
+
+    @media (min-width: 768px) {
+      .benefits {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .benefits {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .logo-placeholder img {
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-placeholder">
+      <img src="updated-whoosh.logo.png" alt="Whoosh logo" />
+    </div>
+    <h1>Know Who’s Emailing You — Instantly</h1>
+    <p>Whoosh is email intelligence made with the goal to save you time and energy—for free. See exactly who’s behind every email to avoid tab-hopping and save hours every week.</p>
+    <button class="add-chrome-btn" onclick="window.open('https://chrome.google.com/webstore/detail/your-extension-id', '_blank')">Add to Chrome</button>
+  </header>
+
+  <section>
+    <h2>Stop Wasting Time</h2>
+    <p>Hover once, know everything. Stay focused and Whoosh through your inbox — no extra clicks or searching.</p>
+    <div class="benefits">
+      <div>
+        <h3>Instant sender bios</h3>
+        <p>Clear, trustworthy info on who’s reaching out.</p>
       </div>
-    </footer>
-  </body>
+      <div>
+        <h3>Identify spam and scams faster</h3>
+        <p>Instantly know when an email might be risky.</p>
+      </div>
+      <div>
+        <h3>More time for what matters</h3>
+        <p>Whoosh through your emails like never before.</p>
+      </div>
+    </div>
+
+    <div class="email-signup">
+      <div id="mc_embed_signup">
+        <form action="https://github.us18.list-manage.com/subscribe/post?u=67fec3a658bf16b755391bc24&amp;id=562dce254e&amp;f_id=005cb0e6f0" method="post" target="_blank" novalidate>
+          <h2>Join Whoosh Nation</h2>
+          <div class="input-group">
+            <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="Enter your email" />
+            <input type="submit" value="Subscribe" id="mc-embedded-subscribe" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/whoosh-ai-1a1042338" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/whoosh_ai?igsh=MWljb3V4Y253czR0cw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@whoosh.ai?_t=ZP-8xmtQ0JS0z8&_r=1" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+    </div>
+    &copy; 2025 Whoosh — All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
+  </footer>
+</body>
 </html>
