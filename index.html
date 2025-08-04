@@ -30,7 +30,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100vh;
+      height: 110vh;
       overflow: hidden;
       z-index: 0;
     }
@@ -40,7 +40,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 110vh;
       background: linear-gradient(180deg, 
         #2563eb 0%, 
         #3b82f6 12%, 
@@ -58,7 +58,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 110vh;
     }
 
     .cloud {
@@ -619,8 +619,8 @@
     }
 
     #mc_embed_signup h2 {
-      color: #ffffff;
-      font-weight: 800;
+      color: #ffffff !important;
+      font-weight: 800 !important;
       margin-bottom: 20px;
       font-size: 2rem;
     }
@@ -875,17 +875,46 @@
   </button>
 
   <script>
-    // Subtle Interactive Sky System - Minimal Mouse Effects
+    // Subtle Interactive Sky System - Enhanced Mouse Effects
     let mouseX = 0, mouseY = 0;
+    let lastMouseX = 0, lastMouseY = 0;
 
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
+      
+      // Cloud interaction - immediate response to mouse movement
+      const deltaX = e.clientX - lastMouseX;
+      const deltaY = e.clientY - lastMouseY;
+      
+      if (Math.abs(deltaX) > 1 || Math.abs(deltaY) > 1) {
+        const clouds = document.querySelectorAll('.cloud');
+        
+        clouds.forEach((cloud, index) => {
+          const intensityX = Math.min(Math.abs(deltaX) * 0.5, 20);
+          const intensityY = Math.min(Math.abs(deltaY) * 0.3, 15);
+          const directionX = deltaX > 0 ? 1 : -1;
+          const directionY = deltaY > 0 ? 1 : -1;
+          const variation = (index % 5) * 0.3;
+          
+          const windX = intensityX * directionX + variation;
+          const windY = intensityY * directionY + variation;
+          
+          cloud.style.transform = `translate(${windX}px, ${windY}px) scale(${1 + (intensityX + intensityY) * 0.01})`;
+          cloud.style.transition = 'transform 1s cubic-bezier(0.23, 1, 0.32, 1)';
+          
+          setTimeout(() => {
+            cloud.style.transform = 'translate(0, 0) scale(1)';
+            cloud.style.transition = 'transform 2s cubic-bezier(0.23, 1, 0.32, 1)';
+          }, 800);
+        });
+      }
+      
+      lastMouseX = e.clientX;
+      lastMouseY = e.clientY;
     });
 
     // Enhanced sky gradient subtle shifting based on mouse position and cloud interaction
-    let lastMouseX = 0;
-    let lastMouseY = 0;
     document.addEventListener('mousemove', (e) => {
       const skyGradient = document.querySelector('.sky-gradient');
       const x = e.clientX / window.innerWidth;
@@ -907,36 +936,6 @@
         ${veryPale} 70%, 
         ${nearWhite} 85%, 
         #FFFFFF 100%)`;
-
-      // Cloud interaction - blow clouds based on mouse movement in all directions
-      const mouseDirectionX = e.clientX - lastMouseX;
-      const mouseDirectionY = e.clientY - lastMouseY;
-      const clouds = document.querySelectorAll('.cloud');
-      
-      clouds.forEach((cloud, index) => {
-        const intensityX = Math.abs(mouseDirectionX) * 0.3;
-        const intensityY = Math.abs(mouseDirectionY) * 0.2; // Slightly less vertical movement
-        const directionX = mouseDirectionX > 0 ? 1 : -1;
-        const directionY = mouseDirectionY > 0 ? 1 : -1;
-        const randomVariationX = (index % 3 - 1) * 0.5; // Add some variation between clouds
-        const randomVariationY = ((index + 1) % 3 - 1) * 0.3;
-        
-        // Apply wind effect based on mouse movement in both X and Y directions
-        const windForceX = intensityX * directionX + randomVariationX;
-        const windForceY = intensityY * directionY + randomVariationY;
-        const scaleEffect = 1 + (intensityX + intensityY) * 0.005;
-        
-        cloud.style.transform = `translate(${windForceX}px, ${windForceY}px) scale(${scaleEffect})`;
-        cloud.style.transition = 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        
-        // Reset transform after a delay
-        setTimeout(() => {
-          cloud.style.transform = 'translate(0, 0) scale(1)';
-        }, 1200);
-      });
-      
-      lastMouseX = e.clientX;
-      lastMouseY = e.clientY;
     });
 
     // Intersection Observer for scroll animations
