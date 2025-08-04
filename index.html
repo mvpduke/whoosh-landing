@@ -42,12 +42,14 @@
       width: 100%;
       height: 100%;
       background: linear-gradient(180deg, 
-        #4A90E2 0%, 
-        #7BB3F0 15%, 
-        #A8D0F0 35%, 
-        #D6E8F5 60%, 
-        #F0F8FF 80%, 
-        #FFFFFF 100%);
+        #2563eb 0%, 
+        #3b82f6 12%, 
+        #60a5fa 25%, 
+        #93c5fd 40%, 
+        #bfdbfe 55%, 
+        #dbeafe 70%, 
+        #eff6ff 85%, 
+        #ffffff 100%);
       transition: all 0.3s ease;
     }
 
@@ -61,183 +63,198 @@
 
     .cloud {
       position: absolute;
-      background: radial-gradient(ellipse 80% 40% at 30% 50%, 
-        rgba(255, 255, 255, 0.95) 0%, 
-        rgba(255, 255, 255, 0.85) 25%, 
-        rgba(248, 250, 252, 0.7) 50%, 
-        rgba(241, 245, 249, 0.4) 75%, 
-        transparent 100%);
-      border-radius: 60% 80% 70% 90%;
+      background: 
+        radial-gradient(ellipse 100% 60% at 35% 40%, 
+          rgba(255, 255, 255, 0.98) 0%, 
+          rgba(255, 255, 255, 0.95) 15%, 
+          rgba(248, 250, 252, 0.88) 30%, 
+          rgba(241, 245, 249, 0.75) 50%, 
+          rgba(226, 232, 240, 0.4) 70%, 
+          rgba(203, 213, 225, 0.15) 85%, 
+          transparent 100%);
+      border-radius: 40% 60% 55% 80% / 30% 80% 70% 40%;
       box-shadow: 
-        inset -5px -8px 15px rgba(0, 0, 0, 0.03),
-        0 8px 25px rgba(0, 0, 0, 0.08),
-        0 3px 8px rgba(0, 0, 0, 0.05);
-      filter: blur(0.3px);
+        inset -8px -12px 25px rgba(0, 0, 0, 0.08),
+        inset 5px 8px 20px rgba(255, 255, 255, 0.7),
+        0 15px 35px rgba(0, 0, 0, 0.12),
+        0 5px 15px rgba(0, 0, 0, 0.08);
+      filter: blur(0.2px) contrast(1.1) brightness(1.05);
       animation: cloud-drift 35s linear infinite;
-      transition: all 0.4s ease;
+      transition: all 0.3s ease;
       transform-style: preserve-3d;
     }
 
     .cloud::before {
       content: '';
       position: absolute;
-      top: -25%;
-      left: 15%;
-      width: 70%;
-      height: 85%;
-      background: radial-gradient(ellipse 60% 45% at 40% 60%, 
-        rgba(255, 255, 255, 0.9) 0%, 
-        rgba(255, 255, 255, 0.6) 40%, 
-        rgba(248, 250, 252, 0.3) 70%, 
-        transparent 100%);
-      border-radius: 70% 60% 80% 50%;
-      box-shadow: inset -3px -5px 10px rgba(0, 0, 0, 0.02);
-      filter: blur(0.2px);
+      top: -35%;
+      left: 20%;
+      width: 85%;
+      height: 100%;
+      background: 
+        radial-gradient(ellipse 80% 70% at 45% 55%, 
+          rgba(255, 255, 255, 0.92) 0%, 
+          rgba(255, 255, 255, 0.85) 20%, 
+          rgba(248, 250, 252, 0.65) 40%, 
+          rgba(241, 245, 249, 0.4) 60%, 
+          rgba(226, 232, 240, 0.2) 80%, 
+          transparent 100%);
+      border-radius: 60% 80% 70% 50% / 40% 60% 80% 30%;
+      box-shadow: 
+        inset -6px -8px 15px rgba(0, 0, 0, 0.05),
+        inset 3px 5px 12px rgba(255, 255, 255, 0.6);
+      filter: blur(0.1px);
     }
 
     .cloud::after {
       content: '';
       position: absolute;
-      top: -15%;
-      right: 10%;
-      width: 55%;
-      height: 75%;
-      background: radial-gradient(ellipse 50% 60% at 60% 40%, 
-        rgba(255, 255, 255, 0.85) 0%, 
-        rgba(255, 255, 255, 0.5) 35%, 
-        rgba(248, 250, 252, 0.25) 65%, 
-        transparent 100%);
-      border-radius: 50% 85% 60% 75%;
-      box-shadow: inset -2px -4px 8px rgba(0, 0, 0, 0.02);
-      filter: blur(0.15px);
+      top: -20%;
+      right: 15%;
+      width: 70%;
+      height: 90%;
+      background: 
+        radial-gradient(ellipse 60% 80% at 55% 45%, 
+          rgba(255, 255, 255, 0.88) 0%, 
+          rgba(255, 255, 255, 0.75) 25%, 
+          rgba(248, 250, 252, 0.5) 45%, 
+          rgba(241, 245, 249, 0.3) 65%, 
+          rgba(226, 232, 240, 0.15) 80%, 
+          transparent 100%);
+      border-radius: 45% 70% 80% 65% / 60% 40% 70% 50%;
+      box-shadow: 
+        inset -4px -6px 12px rgba(0, 0, 0, 0.04),
+        inset 2px 4px 10px rgba(255, 255, 255, 0.5);
+      filter: blur(0.05px);
     }
 
-    /* More varied cloud sizes and positions */
+    /* More varied and realistic cloud sizes */
     .cloud:nth-child(1) {
-      width: 140px;
-      height: 80px;
-      top: 12%;
-      left: -18%;
+      width: 180px;
+      height: 100px;
+      top: 15%;
+      left: -22%;
       animation-duration: 42s;
       animation-delay: 0s;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .cloud:nth-child(2) {
-      width: 220px;
-      height: 120px;
-      top: 22%;
-      left: -28%;
+      width: 280px;
+      height: 160px;
+      top: 25%;
+      left: -35%;
       animation-duration: 38s;
       animation-delay: -12s;
-      opacity: 0.95;
+      opacity: 0.98;
     }
 
     .cloud:nth-child(3) {
-      width: 90px;
-      height: 55px;
-      top: 40%;
-      left: -12%;
+      width: 120px;
+      height: 70px;
+      top: 45%;
+      left: -15%;
       animation-duration: 45s;
       animation-delay: -25s;
-      opacity: 0.8;
-    }
-
-    .cloud:nth-child(4) {
-      width: 180px;
-      height: 100px;
-      top: 32%;
-      left: -22%;
-      animation-duration: 40s;
-      animation-delay: -35s;
       opacity: 0.85;
     }
 
+    .cloud:nth-child(4) {
+      width: 240px;
+      height: 130px;
+      top: 35%;
+      left: -28%;
+      animation-duration: 40s;
+      animation-delay: -35s;
+      opacity: 0.92;
+    }
+
     .cloud:nth-child(5) {
-      width: 160px;
-      height: 90px;
-      top: 50%;
-      left: -20%;
+      width: 200px;
+      height: 115px;
+      top: 55%;
+      left: -25%;
       animation-duration: 36s;
       animation-delay: -18s;
-      opacity: 0.9;
+      opacity: 0.88;
     }
 
     .cloud:nth-child(6) {
-      width: 110px;
-      height: 65px;
-      top: 60%;
-      left: -15%;
+      width: 140px;
+      height: 80px;
+      top: 65%;
+      left: -18%;
       animation-duration: 44s;
       animation-delay: -8s;
-      opacity: 0.75;
+      opacity: 0.80;
     }
 
     .cloud:nth-child(7) {
-      width: 250px;
-      height: 140px;
+      width: 320px;
+      height: 180px;
       top: 8%;
-      left: -32%;
+      left: -40%;
       animation-duration: 34s;
       animation-delay: -28s;
-      opacity: 0.95;
+      opacity: 0.96;
     }
 
     .cloud:nth-child(8) {
-      width: 80px;
-      height: 45px;
-      top: 70%;
-      left: -10%;
+      width: 100px;
+      height: 55px;
+      top: 75%;
+      left: -12%;
       animation-duration: 48s;
       animation-delay: -15s;
-      opacity: 0.7;
+      opacity: 0.75;
     }
 
     .cloud:nth-child(9) {
-      width: 130px;
-      height: 75px;
-      top: 18%;
-      left: -16%;
+      width: 160px;
+      height: 90px;
+      top: 20%;
+      left: -20%;
       animation-duration: 41s;
       animation-delay: -22s;
-      opacity: 0.8;
+      opacity: 0.83;
     }
 
     .cloud:nth-child(10) {
-      width: 200px;
-      height: 110px;
-      top: 45%;
-      left: -25%;
+      width: 260px;
+      height: 140px;
+      top: 50%;
+      left: -32%;
       animation-duration: 37s;
       animation-delay: -5s;
-      opacity: 0.9;
+      opacity: 0.90;
     }
 
-    /* High altitude thin clouds */
+    /* High altitude cirrus clouds */
     .cloud.wispy {
       background: linear-gradient(45deg, 
-        rgba(255, 255, 255, 0.3) 0%, 
-        rgba(255, 255, 255, 0.15) 50%, 
+        rgba(255, 255, 255, 0.6) 0%, 
+        rgba(255, 255, 255, 0.35) 30%,
+        rgba(248, 250, 252, 0.2) 60%, 
         transparent 100%);
-      height: 20px;
-      filter: blur(1px);
-      opacity: 0.6;
-      border-radius: 100px;
-      box-shadow: none;
+      height: 15px;
+      filter: blur(1.5px) contrast(0.9);
+      opacity: 0.7;
+      border-radius: 200px 100px 150px 80px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
     }
 
     .cloud.wispy:nth-child(11) {
-      width: 300px;
-      top: 5%;
-      left: -35%;
+      width: 350px;
+      top: 3%;
+      left: -40%;
       animation-duration: 50s;
       animation-delay: -10s;
     }
 
     .cloud.wispy:nth-child(12) {
-      width: 250px;
-      top: 15%;
-      left: -30%;
+      width: 280px;
+      top: 12%;
+      left: -35%;
       animation-duration: 55s;
       animation-delay: -30s;
     }
@@ -245,45 +262,51 @@
     .wind-effect {
       position: absolute;
       pointer-events: none;
-      width: 80px;
-      height: 25px;
+      width: 120px;
+      height: 35px;
       background: linear-gradient(90deg, 
         transparent, 
-        rgba(255, 255, 255, 0.2), 
-        rgba(248, 250, 252, 0.3), 
-        rgba(255, 255, 255, 0.2), 
+        rgba(255, 255, 255, 0.4), 
+        rgba(248, 250, 252, 0.6), 
+        rgba(241, 245, 249, 0.5), 
+        rgba(255, 255, 255, 0.3), 
         transparent);
-      border-radius: 25px;
+      border-radius: 40px;
       opacity: 0;
-      transform: translateX(-40px);
-      animation: wind-sweep 1.2s ease-out;
-      filter: blur(0.5px);
+      transform: translateX(-60px);
+      animation: wind-sweep 1.5s ease-out;
+      filter: blur(0.8px);
+      box-shadow: 0 2px 15px rgba(255, 255, 255, 0.3);
     }
 
     @keyframes cloud-drift {
-      0% { transform: translateX(0) translateY(0px); }
-      25% { transform: translateX(25vw) translateY(-2px); }
-      50% { transform: translateX(50vw) translateY(0px); }
-      75% { transform: translateX(75vw) translateY(-1px); }
-      100% { transform: translateX(calc(100vw + 350px)) translateY(0px); }
+      0% { transform: translateX(0) translateY(0px) rotate(0deg); }
+      25% { transform: translateX(25vw) translateY(-3px) rotate(0.5deg); }
+      50% { transform: translateX(50vw) translateY(0px) rotate(0deg); }
+      75% { transform: translateX(75vw) translateY(-2px) rotate(-0.3deg); }
+      100% { transform: translateX(calc(100vw + 400px)) translateY(0px) rotate(0deg); }
     }
 
     @keyframes wind-sweep {
       0% { 
         opacity: 0; 
-        transform: translateX(-40px) scale(0.6);
+        transform: translateX(-60px) scale(0.4) skewX(-15deg);
       }
-      30% { 
-        opacity: 0.6; 
-        transform: translateX(10px) scale(1);
+      20% { 
+        opacity: 0.8; 
+        transform: translateX(-10px) scale(0.8) skewX(-10deg);
+      }
+      40% { 
+        opacity: 1; 
+        transform: translateX(20px) scale(1) skewX(-5deg);
       }
       70% { 
-        opacity: 0.4; 
-        transform: translateX(50px) scale(1.1);
+        opacity: 0.7; 
+        transform: translateX(60px) scale(1.2) skewX(0deg);
       }
       100% { 
         opacity: 0; 
-        transform: translateX(90px) scale(0.7);
+        transform: translateX(120px) scale(0.6) skewX(5deg);
       }
     }
 
@@ -310,7 +333,7 @@
       width: 100%;
       height: auto;
       transition: transform 0.3s ease;
-      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
+      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.25));
     }
 
     .logo-placeholder:hover img {
@@ -322,13 +345,19 @@
       margin: 0;
       line-height: 1.2;
       animation: fadeInUp 1s ease-out 0.2s both;
-      background: linear-gradient(45deg, #ffffff, #e0e7ff, #ffffff, #fbbf24);
+      background: linear-gradient(45deg, #ffffff, #f0f9ff, #ffffff, #fbbf24);
       background-size: 300% 300%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       animation: fadeInUp 1s ease-out 0.2s both, shimmer 4s ease-in-out infinite;
-      text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+      text-shadow: 
+        0 0 40px rgba(255, 255, 255, 0.8),
+        0 2px 8px rgba(0, 0, 0, 0.3),
+        0 4px 16px rgba(255, 255, 255, 0.4);
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
     @keyframes shimmer {
@@ -344,7 +373,16 @@
       line-height: 1.6;
       color: #ffffff;
       animation: fadeInUp 1s ease-out 0.4s both;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      text-shadow: 
+        0 0 25px rgba(255, 255, 255, 0.5),
+        0 2px 15px rgba(0, 0, 0, 0.4),
+        0 4px 20px rgba(255, 255, 255, 0.3);
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.95);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
     }
 
     .add-chrome-btn {
@@ -441,6 +479,7 @@
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.6s ease 0.2s;
+      font-weight: 600;
     }
 
     section p.animate {
@@ -590,10 +629,20 @@
     }
 
     #mc_embed_signup h2 {
-      color: #ffffff;
+      color: #fbbf24;
       font-weight: 700;
       margin-bottom: 20px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      text-shadow: 
+        0 0 30px rgba(251, 191, 36, 0.8),
+        0 2px 15px rgba(0, 0, 0, 0.4),
+        0 4px 25px rgba(251, 191, 36, 0.4);
+      font-size: 2rem;
+      background: linear-gradient(45deg, #fbbf24, #f59e0b, #fbbf24);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s ease-in-out infinite;
     }
 
     .input-group {
@@ -802,7 +851,7 @@
 
   <section>
     <h2>Stop Wasting Time</h2>
-    <p>Hover once, know everything. Stay focused and Whoosh through your inbox — no extra clicks or searching.</p>
+    <p><strong>Hover once, know everything. Stay focused and Whoosh through your inbox — no extra clicks or searching.</strong></p>
     <div class="benefits">
       <div>
         <h3>Instant sender bios</h3>
@@ -845,14 +894,14 @@
   </button>
 
   <script>
-    // Interactive Sky System - Realistic Clouds with Wind Effects
+    // Enhanced Interactive Sky System - More Powerful Mouse Effects
     let mouseX = 0, mouseY = 0;
 
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       
-      // Interactive clouds - they respond to cursor with wind effects
+      // More powerful cloud interaction with enhanced wind effects
       const clouds = document.querySelectorAll('.cloud');
       clouds.forEach((cloud, index) => {
         const rect = cloud.getBoundingClientRect();
@@ -863,64 +912,115 @@
         const distanceY = e.clientY - cloudCenterY;
         const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
         
-        if (distance < 120) {
-          // Create subtle wind effect
-          const intensity = (120 - distance) / 120;
-          const windX = (distanceX / distance) * intensity * 8;
-          const windY = (distanceY / distance) * intensity * 4;
+        if (distance < 200) { // Increased interaction radius
+          // More powerful wind effect
+          const intensity = (200 - distance) / 200;
+          const windX = (distanceX / distance) * intensity * 25; // Increased power
+          const windY = (distanceY / distance) * intensity * 15; // Increased power
           
-          // Apply wind distortion to cloud
-          cloud.style.transform = `translate(${windX}px, ${windY}px) scale(${1 + intensity * 0.1}) skew(${windX * 0.5}deg, ${windY * 0.2}deg)`;
-          cloud.style.filter = `blur(${1 + intensity * 1.5}px)`;
-          cloud.style.opacity = 0.7 + (intensity * 0.3);
+          // Apply stronger wind distortion to cloud
+          cloud.style.transform = `translate(${windX}px, ${windY}px) scale(${1 + intensity * 0.2}) skew(${windX * 0.8}deg, ${windY * 0.4}deg) rotate(${windX * 0.3}deg)`;
+          cloud.style.filter = `blur(${0.5 + intensity * 2.5}px) brightness(${1 + intensity * 0.2}) contrast(${1 + intensity * 0.1})`;
+          cloud.style.opacity = 0.6 + (intensity * 0.4);
           
-          // Create wind streak effect
-          if (Math.random() < 0.3) { // 30% chance to create wind effect
-            createWindEffect(cloudCenterX, cloudCenterY, windX, windY);
+          // Create more frequent and powerful wind effects
+          if (Math.random() < 0.6) { // Increased chance to 60%
+            createWindEffect(cloudCenterX, cloudCenterY, windX, windY, intensity);
+          }
+          
+          // Add turbulence effect
+          if (intensity > 0.7) {
+            createTurbulenceEffect(cloudCenterX, cloudCenterY, windX, windY);
           }
         } else {
-          // Return to normal state
-          cloud.style.transform = 'translate(0px, 0px) scale(1) skew(0deg, 0deg)';
-          cloud.style.filter = 'blur(1px)';
+          // Smooth return to normal state
+          cloud.style.transform = 'translate(0px, 0px) scale(1) skew(0deg, 0deg) rotate(0deg)';
+          cloud.style.filter = 'blur(0.2px) contrast(1.1) brightness(1.05)';
           cloud.style.opacity = '';
         }
       });
     });
 
-    // Create wind effect streaks
-    function createWindEffect(x, y, windX, windY) {
+    // Enhanced wind effect streaks
+    function createWindEffect(x, y, windX, windY, intensity) {
       const windStreak = document.createElement('div');
       windStreak.className = 'wind-effect';
       windStreak.style.left = x + 'px';
       windStreak.style.top = y + 'px';
-      windStreak.style.transform = `rotate(${Math.atan2(windY, windX) * 180 / Math.PI}deg)`;
+      windStreak.style.transform = `rotate(${Math.atan2(windY, windX) * 180 / Math.PI}deg) scale(${0.8 + intensity * 0.6})`;
+      windStreak.style.opacity = intensity;
       
       document.querySelector('.sky-container').appendChild(windStreak);
       
       setTimeout(() => {
-        windStreak.remove();
-      }, 800);
+        if (windStreak.parentNode) {
+          windStreak.remove();
+        }
+      }, 1200);
     }
 
-    // Sky gradient subtle shifting based on mouse position
+    // New turbulence effect for stronger interactions
+    function createTurbulenceEffect(x, y, windX, windY) {
+      for (let i = 0; i < 3; i++) {
+        setTimeout(() => {
+          const turbulence = document.createElement('div');
+          turbulence.style.position = 'absolute';
+          turbulence.style.pointerEvents = 'none';
+          turbulence.style.width = '60px';
+          turbulence.style.height = '20px';
+          turbulence.style.background = 'radial-gradient(ellipse, rgba(255, 255, 255, 0.6) 0%, rgba(248, 250, 252, 0.4) 50%, transparent 100%)';
+          turbulence.style.borderRadius = '50%';
+          turbulence.style.left = (x + Math.random() * 40 - 20) + 'px';
+          turbulence.style.top = (y + Math.random() * 30 - 15) + 'px';
+          turbulence.style.opacity = '0';
+          turbulence.style.transform = `rotate(${Math.random() * 360}deg) scale(0.5)`;
+          turbulence.style.transition = 'all 0.8s ease-out';
+          turbulence.style.filter = 'blur(1px)';
+          
+          document.querySelector('.sky-container').appendChild(turbulence);
+          
+          // Animate turbulence
+          requestAnimationFrame(() => {
+            turbulence.style.opacity = '0.7';
+            turbulence.style.transform = `rotate(${Math.random() * 360}deg) scale(1.2) translate(${windX * 0.5}px, ${windY * 0.3}px)`;
+          });
+          
+          setTimeout(() => {
+            if (turbulence.parentNode) {
+              turbulence.style.opacity = '0';
+              turbulence.style.transform += ' scale(0.3)';
+              setTimeout(() => {
+                if (turbulence.parentNode) {
+                  turbulence.remove();
+                }
+              }, 800);
+            }
+          }, 600);
+        }, i * 150);
+      }
+    }
+
+    // Enhanced sky gradient shifting based on mouse position
     document.addEventListener('mousemove', (e) => {
       const skyGradient = document.querySelector('.sky-gradient');
       const x = e.clientX / window.innerWidth;
       const y = e.clientY / window.innerHeight;
       
-      // Create very subtle sky color variations like real atmosphere
-      const skyBlue = `hsl(210, ${65 + x * 5}%, ${58 + y * 3}%)`;
-      const lightBlue = `hsl(200, ${75 + x * 8}%, ${75 + y * 5}%)`;
-      const paleBlue = `hsl(195, ${55 + x * 10}%, ${85 + y * 3}%)`;
-      const veryPale = `hsl(190, ${35 + x * 5}%, ${92 + y * 2}%)`;
+      // More dynamic sky color variations
+      const deepBlue = `hsl(220, ${70 + x * 10}%, ${45 + y * 8}%)`;
+      const skyBlue = `hsl(210, ${75 + x * 8}%, ${58 + y * 5}%)`;
+      const lightBlue = `hsl(200, ${80 + x * 10}%, ${75 + y * 8}%)`;
+      const paleBlue = `hsl(195, ${60 + x * 12}%, ${85 + y * 5}%)`;
+      const veryPale = `hsl(190, ${40 + x * 8}%, ${92 + y * 4}%)`;
       const nearWhite = `hsl(0, 0%, ${96 + y * 3}%)`;
       
       skyGradient.style.background = `linear-gradient(180deg, 
-        ${skyBlue} 0%, 
-        ${lightBlue} 15%, 
-        ${paleBlue} 35%, 
-        ${veryPale} 60%, 
-        ${nearWhite} 80%, 
+        ${deepBlue} 0%, 
+        ${skyBlue} 12%, 
+        ${lightBlue} 25%, 
+        ${paleBlue} 40%, 
+        ${veryPale} 70%, 
+        ${nearWhite} 85%, 
         #FFFFFF 100%)`;
     });
 
@@ -987,30 +1087,10 @@
         });
       });
 
-      // Random shooting stars
-      setInterval(() => {
-        if (Math.random() < 0.3) { // 30% chance every interval
-          createShootingStar();
-        }
-      }, 5000);
-
-      function createShootingStar() {
-        const shootingStar = document.createElement('div');
-        shootingStar.className = 'shooting-star';
-        shootingStar.style.top = Math.random() * 50 + '%';
-        shootingStar.style.left = Math.random() * 30 + 70 + '%';
-        
-        document.querySelector('.stars').appendChild(shootingStar);
-        
-        setTimeout(() => {
-          shootingStar.remove();
-        }, 4000);
-      }
-
-      // Parallax effect for clouds
+      // Enhanced parallax effect for clouds
       window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.3;
+        const rate = scrolled * -0.4; // Slightly stronger parallax
         
         const clouds = document.querySelector('.clouds');
         if (clouds) clouds.style.transform = `translate3d(0, ${rate}px, 0)`;
@@ -1034,7 +1114,7 @@
       }, 100);
     });
 
-    // Add ripple keyframes and additional styles
+    // Add enhanced ripple keyframes and additional styles
     const style = document.createElement('style');
     style.textContent = `
       @keyframes ripple {
@@ -1057,13 +1137,13 @@
       /* Enhanced mobile responsiveness for sky effects */
       @media (max-width: 768px) {
         .cloud {
-          filter: blur(0.5px);
-          opacity: 0.8;
+          filter: blur(0.3px) contrast(1.05) brightness(1.02);
+          opacity: 0.85;
         }
         
         .wind-effect {
-          width: 40px;
-          height: 15px;
+          width: 80px;
+          height: 25px;
         }
       }
       
