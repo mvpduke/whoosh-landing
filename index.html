@@ -87,6 +87,31 @@
       transition: transform 0.8s ease-out;
       transform-style: preserve-3d;
       opacity: 0.92;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    /* Cloud particles for splitting effect */
+    .cloud-particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 2;
+      filter: blur(1px);
+      opacity: 0;
+      animation: particle-fade 2s ease-out forwards;
+    }
+
+    @keyframes particle-fade {
+      0% {
+        opacity: 0.8;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.2);
+      }
     }
 
     .cloud::before {
@@ -404,11 +429,88 @@
     }
 
     section {
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      background: linear-gradient(180deg, #0a0a23 0%, #1a1a2e 30%, #16213e 70%, #0f172a 100%);
       padding: 80px 20px;
       text-align: center;
       flex-shrink: 0;
       position: relative;
+      overflow: hidden;
+    }
+
+    /* Starfield background */
+    .starfield {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite;
+    }
+
+    .star.small {
+      width: 1px;
+      height: 1px;
+      opacity: 0.8;
+    }
+
+    .star.medium {
+      width: 2px;
+      height: 2px;
+      opacity: 0.9;
+      box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+    }
+
+    .star.large {
+      width: 3px;
+      height: 3px;
+      opacity: 1;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      25% { opacity: 0.8; transform: scale(1.1); }
+      50% { opacity: 1; transform: scale(1.2); }
+      75% { opacity: 0.6; transform: scale(1.05); }
+    }
+
+    /* Shooting stars */
+    .shooting-star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), -50px 0 20px rgba(255, 255, 255, 0.3);
+      animation: shoot 4s linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes shoot {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px) translateY(-100px) scale(0);
+      }
+      10% {
+        opacity: 1;
+        transform: translateX(-50px) translateY(-50px) scale(1);
+      }
+      90% {
+        opacity: 1;
+        transform: translateX(200px) translateY(200px) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(250px) translateY(250px) scale(0);
+      }
     }
 
     section h2 {
@@ -417,10 +519,12 @@
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.6s ease;
-      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      background: linear-gradient(135deg, #ffffff, #e0e7ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      position: relative;
+      z-index: 1;
     }
 
     section h2.animate {
@@ -432,17 +536,24 @@
       font-size: 1.1rem;
       max-width: 700px;
       margin: 0 auto 2rem;
-      color: #111827;
+      color: #e2e8f0;
       line-height: 1.6;
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.6s ease 0.2s;
       font-weight: 700;
+      position: relative;
+      z-index: 1;
     }
 
     .benefits p {
       color: #111827;
       font-weight: 700;
+    }
+
+    .benefits {
+      position: relative;
+      z-index: 1;
     }
 
     section p.animate {
@@ -676,41 +787,59 @@
       text-align: center;
       padding: 40px 20px;
       font-size: 0.9rem;
-      color: #64748b;
-      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      color: #94a3b8;
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #334155 100%);
       position: relative;
+      overflow: hidden;
+    }
+
+    /* Footer starfield */
+    .footer-starfield {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
     }
 
     a {
-      color: #3b82f6;
+      color: #60a5fa;
       text-decoration: none;
       transition: color 0.3s ease;
+      position: relative;
+      z-index: 1;
     }
 
     a:hover {
-      color: #1e40af;
+      color: #93c5fd;
     }
 
     .social-icons {
       margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
     }
 
     .social-icons a {
-      color: #3b82f6;
+      color: #60a5fa;
       margin: 0 10px;
       font-size: 1.5rem;
       transition: all 0.3s ease;
       display: inline-block;
       padding: 10px;
       border-radius: 50%;
-      background: rgba(59, 130, 246, 0.05);
+      background: rgba(96, 165, 250, 0.1);
+      position: relative;
+      z-index: 1;
     }
 
     .social-icons a:hover {
-      color: #10b981;
+      color: #34d399;
       transform: translateY(-5px) scale(1.2);
-      background: rgba(16, 185, 129, 0.1);
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+      background: rgba(52, 211, 153, 0.2);
+      box-shadow: 0 10px 25px rgba(52, 211, 153, 0.3);
     }
 
     /* Scroll to top button */
@@ -810,6 +939,7 @@
   </header>
 
   <section>
+    <div class="starfield"></div>
     <h2>Stop Wasting Time</h2>
     <p><strong>Hover once, know everything. Stay focused and Whoosh through your inbox — no extra clicks or searching.</strong></p>
     <div class="benefits">
@@ -825,250 +955,3 @@
         <h3>More time for what matters</h3>
         <p>Whoosh through your emails like never before.</p>
       </div>
-    </div>
-
-    <div class="email-signup">
-      <div id="mc_embed_signup">
-        <form action="https://github.us18.list-manage.com/subscribe/post?u=67fec3a658bf16b755391bc24&amp;id=562dce254e&amp;f_id=005cb0e6f0" method="post" target="_blank" novalidate>
-          <h2>Join Whoosh Nation</h2>
-          <div class="input-group">
-            <input type="email" name="EMAIL" id="mce-EMAIL" required placeholder="Enter your email" />
-            <input type="submit" value="Subscribe" id="mc-embedded-subscribe" />
-          </div>
-        </form>
-      </div>
-    </div
-  </section>
-
-  <footer>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/whoosh-ai-1a1042338" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.instagram.com/whoosh_ai?igsh=MWljb3V4Y253czR0cw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@whoosh.ai?_t=ZP-8xmtQ0JS0z8&_r=1" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
-    </div>
-    &copy; 2025 Whoosh — All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
-  </footer>
-
-  <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <script>
-    // Cloud Mouse Interaction System
-    let lastMouseX = 0;
-    let lastMouseY = 0;
-    let isMouseMoving = false;
-
-    // Initialize everything when DOM is ready
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('DOM loaded, initializing cloud interactions...');
-      
-      // Mouse movement handler for cloud interaction
-      document.addEventListener('mousemove', (e) => {
-        const deltaX = e.clientX - lastMouseX;
-        const deltaY = e.clientY - lastMouseY;
-        
-        // Only react to significant mouse movement
-        if (Math.abs(deltaX) > 2 || Math.abs(deltaY) > 2) {
-          const clouds = document.querySelectorAll('.cloud');
-          console.log('Moving clouds, found:', clouds.length);
-          
-          clouds.forEach((cloud, index) => {
-            const intensityX = Math.min(Math.abs(deltaX) * 0.8, 30);
-            const intensityY = Math.min(Math.abs(deltaY) * 0.6, 20);
-            const directionX = deltaX > 0 ? 1 : -1;
-            const directionY = deltaY > 0 ? 1 : -1;
-            const variation = (index % 3) * 2;
-            
-            const windX = intensityX * directionX + variation;
-            const windY = intensityY * directionY + variation;
-            const scale = 1 + (intensityX + intensityY) * 0.02;
-            
-            // Apply transform immediately
-            cloud.style.transform = `translate(${windX}px, ${windY}px) scale(${scale})`;
-            cloud.style.transition = 'transform 0.6s ease-out';
-            
-            // Reset after delay
-            setTimeout(() => {
-              cloud.style.transform = 'translate(0px, 0px) scale(1)';
-              cloud.style.transition = 'transform 1.5s ease-out';
-            }, 600);
-          });
-        }
-        
-        lastMouseX = e.clientX;
-        lastMouseY = e.clientY;
-      });
-
-      // Sky gradient color shifting
-      document.addEventListener('mousemove', (e) => {
-        const skyGradient = document.querySelector('.sky-gradient');
-        if (skyGradient) {
-          const x = e.clientX / window.innerWidth;
-          const y = e.clientY / window.innerHeight;
-          
-          const deepBlue = `hsl(220, ${70 + x * 3}%, ${45 + y * 2}%)`;
-          const skyBlue = `hsl(210, ${75 + x * 2}%, ${58 + y * 1}%)`;
-          const lightBlue = `hsl(200, ${80 + x * 2}%, ${75 + y * 2}%)`;
-          const paleBlue = `hsl(195, ${60 + x * 3}%, ${85 + y * 1}%)`;
-          const veryPale = `hsl(190, ${40 + x * 2}%, ${92 + y * 1}%)`;
-          const nearWhite = `hsl(0, 0%, ${96 + y * 1}%)`;
-          
-          skyGradient.style.background = `linear-gradient(180deg, 
-            ${deepBlue} 0%, 
-            ${skyBlue} 12%, 
-            ${lightBlue} 25%, 
-            ${paleBlue} 40%, 
-            ${veryPale} 70%, 
-            ${nearWhite} 85%, 
-            #FFFFFF 100%)`;
-        }
-      });
-
-      // Intersection Observer for scroll animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-          }
-        });
-      }, observerOptions);
-
-      // Observe elements for animation
-      const elementsToAnimate = document.querySelectorAll('section h2, section p, .benefits div, .email-signup');
-      elementsToAnimate.forEach(el => observer.observe(el));
-
-      // Scroll to top button visibility
-      const scrollTopBtn = document.querySelector('.scroll-top');
-      
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          scrollTopBtn.classList.add('visible');
-        } else {
-          scrollTopBtn.classList.remove('visible');
-        }
-      });
-
-      // Add click ripple effect to buttons
-      const buttons = document.querySelectorAll('button');
-      buttons.forEach(button => {
-        button.addEventListener('click', (e) => {
-          const ripple = document.createElement('span');
-          const rect = button.getBoundingClientRect();
-          const size = Math.max(rect.width, rect.height);
-          const x = e.clientX - rect.left - size / 2;
-          const y = e.clientY - rect.top - size / 2;
-          
-          ripple.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            left: ${x}px;
-            top: ${y}px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            pointer-events: none;
-            z-index: 10;
-          `;
-          
-          button.style.position = 'relative';
-          button.style.overflow = 'hidden';
-          button.appendChild(ripple);
-          
-          setTimeout(() => ripple.remove(), 600);
-        });
-      });
-
-      // Enhanced parallax effect for clouds
-      window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.4;
-        
-        const clouds = document.querySelector('.clouds');
-        if (clouds) clouds.style.transform = `translate3d(0, ${rate}px, 0)`;
-      });
-
-      // Enhanced keyboard navigation
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Tab') {
-          document.body.classList.add('keyboard-navigation');
-        }
-      });
-
-      document.addEventListener('mousedown', () => {
-        document.body.classList.remove('keyboard-navigation');
-      });
-
-      // Smooth entrance animation for sky elements
-      setTimeout(() => {
-        const skyContainer = document.querySelector('.sky-container');
-        if (skyContainer) {
-          skyContainer.style.opacity = '1';
-        }
-      }, 100);
-    });
-
-    // Add enhanced ripple keyframes and additional styles
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes ripple {
-        to {
-          transform: scale(2);
-          opacity: 0;
-        }
-      }
-      
-      .sky-container {
-        opacity: 0;
-        transition: opacity 1s ease-in;
-      }
-      
-      .keyboard-navigation *:focus {
-        outline: 2px solid #3b82f6;
-        outline-offset: 2px;
-      }
-      
-      /* Force white color for Join Whoosh Nation */
-      #mc_embed_signup h2 {
-        color: #ffffff !important;
-        font-weight: 800 !important;
-        text-shadow: none !important;
-        background: none !important;
-        -webkit-text-fill-color: #ffffff !important;
-      }
-      
-      /* Enhanced mobile responsiveness for sky effects */
-      @media (max-width: 768px) {
-        .cloud {
-          filter: blur(0.3px) contrast(1.05) brightness(1.02);
-          opacity: 0.85;
-        }
-        
-        .wind-effect {
-          width: 80px;
-          height: 25px;
-        }
-      }
-      
-      /* Reduce motion for users who prefer it */
-      @media (prefers-reduced-motion: reduce) {
-        .cloud, .wind-effect {
-          animation: none !important;
-        }
-        
-        .add-chrome-btn, .benefits div, .social-icons a {
-          transition: none !important;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-  </script>
-</body>
-</html>
