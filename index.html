@@ -757,15 +757,16 @@
       height: 250px;
     }
 
-    /* Night sky footer */
+    /* Night sky footer - Fixed positioning */
     footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px 20px 20px 20px;
       font-size: 0.9rem;
       color: #94a3b8;
       background: linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #334155 100%);
       position: relative;
       overflow: hidden;
+      min-height: auto;
     }
 
     /* Footer starfield */
@@ -792,7 +793,7 @@
     }
 
     .social-icons {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       position: relative;
       z-index: 1;
     }
@@ -815,6 +816,12 @@
       transform: translateY(-5px) scale(1.2);
       background: rgba(52, 211, 153, 0.2);
       box-shadow: 0 10px 25px rgba(52, 211, 153, 0.3);
+    }
+
+    .footer-text {
+      margin-top: 10px;
+      position: relative;
+      z-index: 1;
     }
 
     /* Scroll to top button */
@@ -879,6 +886,14 @@
 
       .sky-gradient, .clouds {
         height: 115vh;
+      }
+
+      footer {
+        padding: 25px 20px 15px 20px;
+      }
+
+      .social-icons {
+        margin-bottom: 12px;
       }
     }
   </style>
@@ -952,7 +967,9 @@
       <a href="https://www.instagram.com/whoosh_ai?igsh=MWljb3V4Y253czR0cw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
       <a href="https://www.tiktok.com/@whoosh.ai?_t=ZP-8xmtQ0JS0z8&_r=1" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
     </div>
-    &copy; 2025 Whoosh — All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
+    <div class="footer-text">
+      &copy; 2025 Whoosh — All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
+    </div>
   </footer>
 
   <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
