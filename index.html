@@ -793,7 +793,8 @@
       z-index: 1;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
+      flex-wrap: wrap;
     }
 
     .social-icons a {
@@ -811,6 +812,7 @@
       width: 60px;
       height: 60px;
       text-decoration: none;
+      border: 2px solid rgba(96, 165, 250, 0.2);
     }
 
     .social-icons a:hover {
@@ -818,6 +820,23 @@
       transform: translateY(-5px) scale(1.2);
       background: rgba(52, 211, 153, 0.2);
       box-shadow: 0 10px 25px rgba(52, 211, 153, 0.3);
+      border-color: rgba(52, 211, 153, 0.4);
+    }
+
+    /* Fallback styling for social icons if Font Awesome doesn't load */
+    .social-icons .linkedin-icon::before {
+      content: "in";
+      font-weight: bold;
+    }
+    
+    .social-icons .instagram-icon::before {
+      content: "ig";
+      font-weight: bold;
+    }
+    
+    .social-icons .tiktok-icon::before {
+      content: "tt";
+      font-weight: bold;
     }
 
     .footer-links {
@@ -1085,9 +1104,15 @@
       </div>
       
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/whoosh-ai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/whoosh_ai" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@whoosh.ai" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.linkedin.com/in/whoosh-ai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="linkedin-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/whoosh_ai" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="instagram-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@whoosh.ai" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="tiktok-icon">
+          <i class="fab fa-tiktok"></i>
+        </a>
       </div>
 
       <div class="company-info">
@@ -1126,6 +1151,30 @@
     // Initialize everything when DOM is ready
     document.addEventListener('DOMContentLoaded', () => {
       console.log('DOM loaded, initializing cloud interactions...');
+      
+      // Fallback for social icons if Font Awesome doesn't load
+      setTimeout(() => {
+        const socialLinks = document.querySelectorAll('.social-icons a');
+        socialLinks.forEach((link, index) => {
+          const icon = link.querySelector('i');
+          if (icon && !window.getComputedStyle(icon, ':before').content.includes('\"')) {
+            // Font Awesome didn't load properly, use text fallback
+            if (link.href.includes('linkedin')) {
+              link.innerHTML = 'LI';
+              link.style.fontSize = '1rem';
+              link.style.fontWeight = 'bold';
+            } else if (link.href.includes('instagram')) {
+              link.innerHTML = 'IG';
+              link.style.fontSize = '1rem';
+              link.style.fontWeight = 'bold';
+            } else if (link.href.includes('tiktok')) {
+              link.innerHTML = 'TT';
+              link.style.fontSize = '1rem';
+              link.style.fontWeight = 'bold';
+            }
+          }
+        });
+      }, 1000);
       
       // Mouse movement handler for cloud interaction
       document.addEventListener('mousemove', (e) => {
